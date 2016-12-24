@@ -5,7 +5,7 @@ date:   2016-12-23 17:49:34
 categories: jekyll update
 ---
 
-###Objective
+### Objective
 
 This blog is inspired from the [wildml blog][wildml_text_cnn] on text classification using convolution neural networks. This blog is based on the tensorflow code given in wildml blog. Here, in this blog i have taken two senetences as example and tried to explain what happens to the input data at each layer of the CNN. For each layer of the network it explains input for the layer, processing done and the output of each layer along with the shape of input and output data.  
 This blog does not explains the basic working of CNN. It assumes that the reader has some understanding of CNN's  
@@ -29,7 +29,7 @@ I Will be using following two sentences as input for our classification task:
 Here we have two sentences of length 6 and 5 respectively.  
 We also assume that their are two classes for our classification model, Positive and Negative.
 
-###Data preprocessing and building the vocabulary  
+### Data preprocessing and building the vocabulary  
 
 Since the sentences are of different length, we pad our sentences with special `<PAD>` token to make the lengths of the two sentences equal.  
 
@@ -53,27 +53,27 @@ Next, each sentence is converted into vector of integers.
 **Sentence 2** : [1, 7, 8, 4, 6, 0]
 
 
-###Embedding Layer  
+### Embedding Layer  
 
-####Configurable parameters for embedding layer
+#### Configurable parameters for embedding layer
 
 * **batch_size** = 2 (Since we have only two sentences here)  
 * **sequence length** = 6 (Max length of the senteces)  
 * **num_classes**       = 2 (Number of output classes. Positive and negative in our case)  
 * **vocabulary size (V)** = 9  
 
-####Trainable parameters for embedding layer
+#### Trainable parameters for embedding layer
 
 * **Embedding vector size (E)** = 128 (Size of the embedding vector)  
 * **Embedding matrix (W) of shape** = [V * E] = [9 * 128]
 
-####Input
+#### Input
 * **shape of input (input_x)** = [batch_size, sequence_length] = [2, 6]  
 * **shape of input (input_y)** = [batch_size, num_classes] = [2, 2]  
 Here, input_y are the output labels of input sentences encoded using one-hot encoding. Assuming both the sentences are positive (which will not be the actual case. There will also be negative sentences.)  
 input_y = [ [1, 0], [1,0] ]
 
-####Working of embedding layer
+#### Working of embedding layer
 
 As per the code in the [wildml blog][wildml_text_cnn]:  
 {% highlight  python %}
@@ -85,7 +85,7 @@ Each element of the tuple is an array of numbers, representing sentence in the f
 For example :   
 <img src="/images/SentenceRepresentation.png" alt="Drawing" style="width: 500px;"/>  
 
-####Embedding Lookup
+#### Embedding Lookup
 Statement from the [wildml blog][wildml_text_cnn]
 {% highlight  python %}
 self.embedded_chars = tf.nn.embedding_lookup(w, self.input_x)
@@ -111,14 +111,14 @@ Both the above statements can be easily understood from the following figure, wh
 <img src="/images/SentenceRepresentationWordVector.png" alt="Drawing" style="width: 500px;"/>  
 This completes the explanation of embedding layer
 
-####Output of embedding layer : 
+#### Output of embedding layer : 
 
 * Tensor of shape : `[batch_size, sequence_length, embedding_vector_length, 1]`, i.e, `[2 * 9 * 128 * 1]`.
 Next layer in the model is the convolution layer.
 
-###Convolution Layer
+### Convolution Layer
 
-####Configurable parameters of convolution layer
+#### Configurable parameters of convolution layer
 
 * **filter_sizes** : 3, 4, 5
 * **num_filters**: 128
@@ -126,11 +126,11 @@ Next layer in the model is the convolution layer.
 * **Padding** : VALID  
 As oppossed to 2D filters in images, here in text classification we use 1D filters. We will be using filters of sizes 3,4,5. First we will go through the process of a single filter. Same will work for the other two sizes. Later we will see, how to merge the output from all the three filter sizes.
 
-####Trainable parameters of convolution layer
+#### Trainable parameters of convolution layer
 * **Weight matrix (W)** : its shape is same as shape of filter.(Discussed next)
 * **Bias(b)** : = [0.1, 0.1, 0.1........0.1] Since there are 128 filters, there will be 128 bias values.
 
-####Input
+#### Input
 * Output of the expanded embedding lookup step. Its shape is  
 `[batch_size, sequence_length, embedding_vector_length, 1]`, i.e, `[2 * 6 * 128 * 1]`
 
@@ -184,9 +184,9 @@ The figure below describes the process for all the filters i.e, num_filters = 12
 <img src="/images/FlowdiagCNN.png" alt="Drawing" style="width: 800px;"/>  
 The figure above shows the output, for, when 128 filters of size 3 are applied on  a single sentence. When applied to batch, shape becomes [batch_size * 4 * 1 * 128] = [2 * 4 * 1 * 128]  
 
-###Pooling Layer
+### Pooling Layer
 
-####Configurable parameters of pooling layer
+#### Configurable parameters of pooling layer
 
 * **ksize** : shape of the pool operator `[1 * 4 * 1 * 128]`
 * **strides** : same as conv2d `[1 * 1 * 1 * 1]`
@@ -199,7 +199,7 @@ pooled = tf.nn.max_pool(h, ksize=[1, sequence_length - filter_size + 1, 1, 1],
                     padding='VALID',
                     name="pool")
 {% endhighlight %}
-####Input
+#### Input
 Output of the convolution layer, whose shape is `[batch_size * 4 * 1 * num_filters ] = [2 * 4 * 1 * 128]`. Here, we are using the output from the filter of size, filter_size = 3  
 In the max pooling layer we perform max operation on the output of each filter over the sentence, i.e, max operation on the `4 * 1` output of each filter.
 The max  can be selected from all the 4 values, or we can define a different ksize.   
@@ -230,7 +230,7 @@ Next, in the code,
 {% endhighlight %}
 a reshape is performed to get a tensor of shape `[batch_size, (3* 128)] = [batch_size , 384]  = [2 * 384]`. This means, now for each sentence we have a fiter output in a row as shown above.
 
-###Dropout Layer
+### Dropout Layer
 Corresponding code statement 
 {% highlight  python %}
 self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
@@ -241,13 +241,13 @@ In this layer simply dropout is applied. Input and output shapes remain the same
 * Input shape    : [batch_size * 384] = [2 * 384]
 * Output shape : [batch_size * 384] = [2 * 384]
 
-###Output Layer
+### Output Layer
 Corresponding code statement 
 {% highlight  python %}
 self.scores = tf.nn.xw_plus_b(self.h_drop, W, b, name="scores")
 {% endhighlight %}
 
-####Configurable parameters of output layer
+#### Configurable parameters of output layer
 
 * **Weight matrix (W)** of shape [ total_num_filters * num_classes]  
 where, `total_num_filters = length([3, 4, 5]) * num_filters = 3 * 128 = 384`,  
@@ -256,10 +256,10 @@ Therefore, shape of W = [384 * 2]
 * **Bias (b)** of shape [num_classes] = [2] or  
 b = [0.1, 0.1]
 
-####Input
+#### Input
 Output of the previous dropout layer with shape `[2 * 384]`. So, the size of each input vector is 384.
 
-####Working
+#### Working
 For each input vector (x) from the previous layer, `xW + b` is calculated,  
 where x is a row vector of `[384]` elements, W is `[384 * 2]`.  
 So, for each sentence we get a vector of length 2 (num_classes),  
