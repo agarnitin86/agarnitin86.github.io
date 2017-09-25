@@ -113,7 +113,7 @@ This completes the explanation of embedding layer
 
 #### Output of embedding layer : 
 
-* Tensor of shape : `[batch_size, sequence_length, embedding_vector_length, 1]`, i.e, `[2 * 9 * 128 * 1]`.
+* Tensor of shape : `[batch_size, sequence_length, embedding_vector_length, 1]`, i.e, `[2 * 6 * 128 * 1]`.
 Next layer in the model is the convolution layer.
 
 ### Convolution Layer
