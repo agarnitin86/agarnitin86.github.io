@@ -7,4 +7,19 @@ categories: GCP
 
 ### Objective
 
-This blog is inspired from the
+## This gist contains help functions/steps for different tasks
+
+1. Using ColumnTransformer
+2. Search for available GPUs
+3. Steps to handle nan in loss during training
+4. Steps to increase gpu utilization and speed of processing
+5. Commands to monitor gpu usage
+6. Commands to run tensorboard
+7. Command to create tar file
+8. Command to compute per user memory usage
+9. Shell script to compress all files in a directory and delete the originial file from the directory. This script will create separate tar file for each file in the directory
+10. Setting up tensorflow environment variables
+11. Setting up LD_LIBRARY_PATH variable for tensorflow
+12. Some useful steps to setup server for Deep Learning
+13. Shell command to check folder wise disk usage
+14. Filezilla: Error: Disconnected: No supported authentication methods available (server sent: publickey)
