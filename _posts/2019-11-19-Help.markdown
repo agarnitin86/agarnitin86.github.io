@@ -23,3 +23,16 @@ categories: GCP
 12. Some useful steps to setup server for Deep Learning
 13. Shell command to check folder wise disk usage
 14. Filezilla: Error: Disconnected: No supported authentication methods available (server sent: publickey)
+
+**Using ColumnTransformer**
+This code demonstrates how to use ColumnTransformer
+```python
+from sklearn.compose import ColumnTransformer
+from sklearn.compose import make_column_transformer
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
+df = pd.DataFrame({'region':['a','a','b','c'], 'country':['c1', 'c1', 'c2', 'c3']})
+categorical_features = ['region','country']
+preprocessor = make_column_transformer((OneHotEncoder(), categorical_features))
+df_new = preprocessor.fit_transform(df)
+```
