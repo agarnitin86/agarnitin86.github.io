@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Help on various topics"
+date:   2019-11-19 17:49:34
+categories: GCP
+---
+
+### Objective
+
+This blog is inspired from the
