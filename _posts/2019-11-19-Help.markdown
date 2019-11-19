@@ -9,7 +9,7 @@ categories: GCP
 
 ## This gist contains help functions/steps for different tasks
 
-1. Using ColumnTransformer
+1. [Using ColumnTransformer](#coltrans)
 2. Search for available GPUs
 3. Steps to handle nan in loss during training
 4. Steps to increase gpu utilization and speed of processing
@@ -24,6 +24,10 @@ categories: GCP
 13. Shell command to check folder wise disk usage
 14. Filezilla: Error: Disconnected: No supported authentication methods available (server sent: publickey)
 
+---
+
+# coltrans
+
 **Using ColumnTransformer**
 This code demonstrates how to use ColumnTransformer
 ```python
@@ -36,6 +40,7 @@ categorical_features = ['region','country']
 preprocessor = make_column_transformer((OneHotEncoder(), categorical_features))
 df_new = preprocessor.fit_transform(df)
 ```
+---
 
 **Search for available GPUs**
 How to get list of GPUs visible to tensorflow/keras
