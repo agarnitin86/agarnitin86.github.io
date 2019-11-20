@@ -79,30 +79,30 @@ with tf.Session() as sess:
 ---
 
 **Steps to increase gpu utilization and speed of processing**
-1) Clear Keras session using K.clear_session
-2) Use fit_gen instead of fit if data is huge
-3) Use early stopping
-4) Use multiple workers in fit/fit_gen. (This has no been checked)
-5) Try increasing validation_freq
-6) If using LSTM try using cuDNNLSTM instead of LSTM
-7) If using LSTM try using unroll = True option
+1. Clear Keras session using K.clear_session
+2. Use fit_gen instead of fit if data is huge
+3. Use early stopping
+4. Use multiple workers in fit/fit_gen. (This has no been checked)
+5. Try increasing validation_freq
+6. If using LSTM try using cuDNNLSTM instead of LSTM
+7. If using LSTM try using unroll = True option
 
 ---
  **Commands to monitor gpu usage**
-$ nvidia-smi -l 1
-$ watch -n 0.5 nvidia-smi
+$ nvidia-smi -l 1 
+$ watch -n 0.5 nvidia-smi 
 
-**Commands to run tensorboard**
-tensorboard --logdir=./iteration_7/model/logs/ --port=8097 --host=127.0.0.1
+**Commands to run tensorboard** 
+tensorboard --logdir=./iteration_7/model/logs/ --port=8097 --host=127.0.0.1 
 
-**Command to create tar file**
-tar -czvf moscow.tar.gz ./store_log_calendar_Moscow.csv
+**Command to create tar file** 
+tar -czvf moscow.tar.gz ./store_log_calendar_Moscow.csv 
 
-**Command to compute per user memory usage**
-ps aux | awk '{arr[$1]+=$4}; END {for (i in arr) {print i,arr[i]}}' | sort -k2
+**Command to compute per user memory usage** 
+ps aux | awk '{arr[$1]+=$4}; END {for (i in arr) {print i,arr[i]}}' | sort -k2 
 
-**Shell script to compress all files in a directory and delete the originial file from the directory. This script will create separate tar file for each file in the directory**
-for i in * ; do tar cvzf $i.tar.gz $i; rm -rf $i; done
+**Shell script to compress all files in a directory and delete the originial file from the directory. This script will create separate tar file for each file in the directory** 
+for i in * ; do tar cvzf $i.tar.gz $i; rm -rf $i; done 
 
 ---
 
@@ -176,8 +176,10 @@ https://www.tensorflow.org/install/source
 
 **Shell command to check folder wise disk usage**
 $ du -h --max-depth=1 /data/rb/users/|sort -h
+
 ---
-## Links
+
+## Links 
 
 |S.No.   | Category   | Task        | Link           |
 |--------:|----------------:| ------------- |:-------------:| 
