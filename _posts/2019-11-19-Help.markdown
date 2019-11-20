@@ -26,6 +26,15 @@ categories: GCP
 
 ---
 
+## Links 
+
+|S.No.   | Category   | Task        | Link           |
+|--------:|----------------:| ------------- |:-------------:| 
+|1. | Tensorflow | Tensorflow version compatibility chart      | https://www.tensorflow.org/install/source |
+|2. | Cuda, Tensorflow | Steps needed to install cuda & runtime libraries   | https://www.tensorflow.org/install/gpu#ubuntu_1604_cuda_10 |
+
+---
+
 **Using ColumnTransformer**
 This code demonstrates how to use ColumnTransformer
 ```python
@@ -179,19 +188,10 @@ $ du -h --max-depth=1 /data/rb/users/|sort -h
 
 ---
 
-## Links 
-
-|S.No.   | Category   | Task        | Link           |
-|--------:|----------------:| ------------- |:-------------:| 
-|1. | Tensorflow | Tensorflow version compatibility chart      | https://www.tensorflow.org/install/source |
-|2. | Cuda, Tensorflow | Steps needed to install cuda & runtime libraries   | https://www.tensorflow.org/install/gpu#ubuntu_1604_cuda_10 |
-
----
-
 **Filezilla error while connecting**
 
 Error:	Disconnected: No supported authentication methods available (server sent: publickey)
-Error:	Could not connect to server
+Error:	Could not connect to server 
 **Solution**
 If you have private key file (.ppk file):
 In Filezilla,
