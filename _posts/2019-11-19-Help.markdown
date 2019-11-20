@@ -7,7 +7,7 @@ categories: python, sklearn, gpu
 
 ## This resource contains help functions/steps for following tasks:
 
-1. Using ColumnTransformer
+1. Using ColumnTransformer [here](#col-trans)
 2. Search for available GPUs
 3. Steps to handle nan in loss during training
 4. Steps to increase gpu utilization and speed of processing
