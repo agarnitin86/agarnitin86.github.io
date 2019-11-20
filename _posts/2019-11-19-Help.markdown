@@ -61,5 +61,139 @@ tf.test.gpu_device_name returns the name of the gpu device
 
 with tf.Session() as sess:
   devices = sess.list_devices()
-
 ```
+
+---
+
+**Steps to handle nan in loss during training:**
+
+1) Normalize your outputs by quantile normalizing or z scoring. To be rigorous, compute this transformation on the training data, not on the entire dataset. 
+2) Add regularization, either by increasing the dropout rate or adding L1 and L2 penalties to the weights.
+3) reduce the size of your network. 
+4) Increase the batch size from 32 to 128. 128 is fairly standard and could potentially increase the stability of the optimization.
+5) In Keras you can use clipnorm=1 (see https://keras.io/optimizers/) to simply clip all gradients with a norm above 1.
+6) It turns out, one of the images that I was handing to my CNN (and doing mean normalization on) was nothing but 0's. I wasn't checking for this case when I subtracted the mean and normalized by the std deviation and thus I ended up with an exemplar matrix which was nothing but nan's. 
+7) The first thing you can try is changing your activation to LeakyReLU instead of using Relu or Tanh.
+8) Column in my data set had all the same numerical value, making it effectively a worthless addition to the DNN.
+
+---
+
+**Steps to increase gpu utilization and speed of processing**
+1) Clear Keras session using K.clear_session
+2) Use fit_gen instead of fit if data is huge
+3) Use early stopping
+4) Use multiple workers in fit/fit_gen. (This has no been checked)
+5) Try increasing validation_freq
+6) If using LSTM try using cuDNNLSTM instead of LSTM
+7) If using LSTM try using unroll = True option
+
+---
+ **Commands to monitor gpu usage**
+$ nvidia-smi -l 1
+$ watch -n 0.5 nvidia-smi
+
+**Commands to run tensorboard**
+tensorboard --logdir=./iteration_7/model/logs/ --port=8097 --host=127.0.0.1
+
+**Command to create tar file**
+tar -czvf moscow.tar.gz ./store_log_calendar_Moscow.csv
+
+**Command to compute per user memory usage**
+ps aux | awk '{arr[$1]+=$4}; END {for (i in arr) {print i,arr[i]}}' | sort -k2
+
+**Shell script to compress all files in a directory and delete the originial file from the directory. This script will create separate tar file for each file in the directory**
+for i in * ; do tar cvzf $i.tar.gz $i; rm -rf $i; done
+
+---
+
+## Setting up tensorflow environment
+
+**Environment variables for tensorflow-gpu:**
+TF_FORCE_GPU_ALLOW_GROWTH = True
+
+**Configuration parameters to be set in code**
+```
+config.gpu_options.allow_growth = True
+config.gpu_options.visible_device_list = which_gpu
+config.gpu_options.per_process_gpu_memory_fraction = 0.4
+```
+**Code to dynamically grow GPU memory (instead of allocating everything at once)**
+
+```       
+import tensorflow as tf 
+from keras.backend.tensorflow_backend import set_session
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
+sess = tf.Session(config=config)
+set_session(sess) 
+```
+---
+
+**Some useful steps to setup server for Deep Learning**
+
+**Download the anaconda installer**
+$ wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+or
+$ wget https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+
+**Run the installer**
+$ bash Anaconda3-2019.03-Linux-x86_64.sh
+$ source .bashrc
+
+**Upgrade conda (Might not be required, check the instructions)**
+conda upgrade conda
+or
+conda upgrade --all
+
+**Create new virtual environment in conda**
+$ conda create -n venv_rb python=3.5
+$ conda activate venv_rb
+
+**Some useful commands to check the environment**
+$ conda info
+$ conda list
+$ which pip
+
+**Installing some useful packages**
+$ pip install --upgrade tensorflow-gpu
+$ pip install keras
+$ conda install pandas
+$ pip install matplotlib
+$ pip install -U scikit-learn
+$ pip install jupyter
+$ pip install pandas-profiling
+
+**Setting up LD_LIBRARY_PATH variable for tensorflow**
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64
+
+**Additional steps needed to install cuda & runtime libraries (Select based on ubuntu & tensorflow-gpu versions)**
+https://www.tensorflow.org/install/gpu#ubuntu_1604_cuda_10
+
+**Tensorflow version compatibility chart**
+https://www.tensorflow.org/install/source
+
+---
+
+**Shell command to check folder wise disk usage**
+$ du -h --max-depth=1 /data/rb/users/|sort -h
+---
+## Links
+
+|S.No.   | Category   | Task        | Link           |
+|--------:|----------------:| ------------- |:-------------:| 
+|1. | Tensorflow | Tensorflow version compatibility chart      | https://www.tensorflow.org/install/source |
+|2. | Cuda, Tensorflow | Steps needed to install cuda & runtime libraries   | https://www.tensorflow.org/install/gpu#ubuntu_1604_cuda_10 |
+
+---
+
+**Filezilla error while connecting**
+
+Error:	Disconnected: No supported authentication methods available (server sent: publickey)
+Error:	Could not connect to server
+**Solution**
+If you have private key file (.ppk file):
+In Filezilla,
+Go to Edit >> Settings >> SFTP >> Add Key File
+Upload your private key file and try to re-connect.
+
+---
