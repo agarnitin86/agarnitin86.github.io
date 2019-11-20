@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "Help on various topics"
+title:  "Tricks, Tips & solutions"
 date:   2019-11-19 17:49:34
-categories: GCP
+categories: python, sklearn, gpu
 ---
 
-### Objective
-
-## This gist contains help functions/steps for different tasks
+## This resource contains help functions/steps for following tasks:
 
 1. Using ColumnTransformer
 2. Search for available GPUs
