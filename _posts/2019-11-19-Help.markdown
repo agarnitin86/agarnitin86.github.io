@@ -192,6 +192,7 @@ $ du -h --max-depth=1 /data/rb/users/|sort -h
 
 Error:	Disconnected: No supported authentication methods available (server sent: publickey)
 Error:	Could not connect to server 
+
 **Solution**
 If you have private key file (.ppk file):
 In Filezilla,
