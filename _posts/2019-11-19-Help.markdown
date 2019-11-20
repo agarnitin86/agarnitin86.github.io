@@ -67,14 +67,14 @@ with tf.Session() as sess:
 
 **Steps to handle nan in loss during training:**
 
-1) Normalize your outputs by quantile normalizing or z scoring. To be rigorous, compute this transformation on the training data, not on the entire dataset. 
-2) Add regularization, either by increasing the dropout rate or adding L1 and L2 penalties to the weights.
-3) reduce the size of your network. 
-4) Increase the batch size from 32 to 128. 128 is fairly standard and could potentially increase the stability of the optimization.
-5) In Keras you can use clipnorm=1 (see https://keras.io/optimizers/) to simply clip all gradients with a norm above 1.
-6) It turns out, one of the images that I was handing to my CNN (and doing mean normalization on) was nothing but 0's. I wasn't checking for this case when I subtracted the mean and normalized by the std deviation and thus I ended up with an exemplar matrix which was nothing but nan's. 
-7) The first thing you can try is changing your activation to LeakyReLU instead of using Relu or Tanh.
-8) Column in my data set had all the same numerical value, making it effectively a worthless addition to the DNN.
+1. Normalize your outputs by quantile normalizing or z scoring. To be rigorous, compute this transformation on the training data, not on the entire dataset. 
+2. Add regularization, either by increasing the dropout rate or adding L1 and L2 penalties to the weights.
+3. reduce the size of your network. 
+4. Increase the batch size from 32 to 128. 128 is fairly standard and could potentially increase the stability of the optimization.
+5. In Keras you can use clipnorm=1 (see https://keras.io/optimizers/) to simply clip all gradients with a norm above 1.
+6. It turns out, one of the images that I was handing to my CNN (and doing mean normalization on) was nothing but 0's. I wasn't checking for this case when I subtracted the mean and normalized by the std deviation and thus I ended up with an exemplar matrix which was nothing but nan's. 
+7. The first thing you can try is changing your activation to LeakyReLU instead of using Relu or Tanh.
+8. Column in my data set had all the same numerical value, making it effectively a worthless addition to the DNN.
 
 ---
 
