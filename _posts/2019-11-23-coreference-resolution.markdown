@@ -30,8 +30,8 @@ Because ***she*** was going to the departmental store, ***Mary*** was asked to p
 **BERT (Bidirectional Encoder Representations from Transformers)** is one of latest developments in the field of NLP by Google.
 The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for BERT:
 
-- [BERT-Large, Uncased (Whole Word Masking)](https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip): 24-layer, 1024-hidden, 16-heads, 340M parameters
-- [BERT-Large, Cased (Whole Word Masking)](https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip): 24-layer, 1024-hidden, 16-heads, 340M parameters
+- [BERT-Large, Uncased (Whole Word Masking)][BERT-Large-Uncased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
+- [BERT-Large, Cased (Whole Word Masking)][BERT-Large-Cased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 
 **Problem statement**
 
@@ -39,3 +39,5 @@ The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for B
 
 **References**
 []https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
+[BERT-Large-Uncased]:https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip
+[BERT-Large-Cased]:https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip
