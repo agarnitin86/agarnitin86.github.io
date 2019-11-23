@@ -57,8 +57,8 @@ We run forward propogation through BERT on our data and extract the output of la
 
 
 **References**
+- https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
+- https://github.com/google-research/bert
 
 [BERT_Large_Uncased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip
 [BERT_Large_Cased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip
-
-[test]: https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
