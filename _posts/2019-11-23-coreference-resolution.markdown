@@ -33,6 +33,10 @@ The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for B
 - [BERT-Large, Uncased (Whole Word Masking)][BERT_Large_Uncased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 - [BERT-Large, Cased (Whole Word Masking)][BERT_Large_Cased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 
+BERT is a method of training a general-purpose "language understanding" model on a large text corpus (like Wikipedia), and then using that model for downstream NLP tasks. BERT is the first unsupervised, deeply bidirectional system for pre-training NLP. Pre-trained models can be either context-free or contextual. Models like word2vec & GloVe are Context-free models. These models generate a single "word embedding" representation for each word in the vocabulary. But, based on the context in which a word is used it might have a different meaning & hence a different representation, i.e., more than one representations of same word should be possible, which is handled by Contextual models.
+
+BERT is a contextual model & takes learnings from techniques like Semi-supervised Sequence Learning, Generative Pre-Training, ELMo, and ULMFit. Major enhancement comes with being *Deeply Bidirectional*, which means, while computing the representation of a word, it takes into account both left & right context in a "deep" manner.
+
 **Problem statement**
 
 **Solution approach**
