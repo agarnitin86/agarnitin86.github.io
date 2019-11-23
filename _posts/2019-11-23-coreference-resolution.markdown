@@ -25,8 +25,6 @@ Continued Example: "He started a new one" where 'one' refers to 'The relationshi
 For eg.,
 Because ***she*** was going to the departmental store, ***Mary*** was asked to pick up the vegetables.
 
-**What has already been done**
-
 **BERT (Bidirectional Encoder Representations from Transformers)** is one of latest developments in the field of NLP by Google.
 The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for BERT:
 
@@ -39,7 +37,24 @@ BERT is a contextual model & takes learnings from techniques like Semi-supervise
 
 **Problem statement**
 
+Givent the document, anaphora, and two antecedents or precedents, resolve, which of the two antecedents/precedents does the anaphora refer to. 
+
 **Solution approach**
+Here, we try to use BERT to solve the above mentioned probelm. The problem is formulated as a binary classification problem with two antecedents/precedents being the two classes.
+
+Features used:
+- Anaphora
+- First antecedent or precedent
+- Second antecedent or precedent
+- Preceeding n words from anaphora
+- Preceeding n words from first antecedent or precedent
+- Preceeding n words from second antecedent or precedent
+- Head word for anaphora
+- Head word for first antecedent or precedent
+- Head word for second antecedent or precedent
+
+We run forward propogation through BERT on our data and extract the output of last layer. This output is the embeddings that we use for creating our features. Once all the feature words/expression are extracted, we extract BERT embeddings for these features. These embeddings are then concatenated & used as features to train the Multi-layer perceptron model.
+
 
 **References**
 
