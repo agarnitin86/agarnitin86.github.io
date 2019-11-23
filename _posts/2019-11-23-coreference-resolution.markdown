@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Anaphora resolution for binary entities"
+title:  "Anaphora resolution for binary entities using BERT"
 date:   2019-11-23 17:49:34
 categories: nlp, coreference resolution
 ---
