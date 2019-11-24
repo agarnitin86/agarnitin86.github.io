@@ -12,4 +12,5 @@ github_username:  agarnitin86
 # Build settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-theme: jekyll-theme-cayman
+#theme: jekyll-theme-cayman
+remote_theme: benbalter/retlab
