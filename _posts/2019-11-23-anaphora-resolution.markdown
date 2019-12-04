@@ -32,7 +32,7 @@ The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for B
 - [BERT-Large, Uncased (Whole Word Masking)][BERT_Large_Uncased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 - [BERT-Large, Cased (Whole Word Masking)][BERT_Large_Cased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 
-BERT is the best example of Transfer Learning where we train a general-purpose model on a large text corpus and use that model to solve different NLP tasks. BERT is the first unsupervised, deeply bidirectional system for pre-training NLP. Pre-trained models can be either context-free or contextual. Models like word2vec & GloVe are Context-free models. These models generate a single "word embedding" representation for each word in the vocabulary. But, based on the context in which a word is used it might have a different meaning & hence a different representation, i.e., more than one representations of same word should be possible, which is handled by Contextual models.
+BERT is the best example of Transfer Learning where we train a general-purpose model on a large text corpus and use that model to solve different NLP tasks. BERT is the first unsupervised, deeply bidirectional system for pre-training NLP. Pre-trained models can be either context-free or contextual. Models like word2vec & GloVe are Context-free models. These models generate a single "word embedding" representation for each word in the vocabulary. But, based on the context in which a word is used it might have a different meaning & hence a different representation, i.e., more than one representation of same word is possible, which is handled by Contextual models.
 
 BERT is a contextual model & takes learnings from techniques like Semi-supervised Sequence Learning, Generative Pre-Training, ELMo, and ULMFit. Major enhancement comes with being *Deeply Bidirectional*, which means, while computing the representation of a word, it takes into account both left & right context in a "deep" manner.
 
@@ -85,11 +85,11 @@ feature_em_test  = CoreferenceResolution.extract_bert_embedding_for_word(test_da
 dev_emb_all = CoreferenceResolution.merge_all_features(development_emb, feature_em_dev)
 test_emb_all = CoreferenceResolution.merge_all_features(test_emb, feature_em_test)
 ```
-9. We can add additional features if want to use to our dataframe at this step.
+9. We can add additional features to the dataframe at this step.
 
 10. Next we train the classifier using the above created features. We used multi-layered perceptrons for training the model. Again, this piece can be modified to try out other classifiers/networks.
 
-The piece of work described here is still under development and we are working on making improvements to achieve better accuracy. More of it will be described in part-2 of this series.
+The piece of work described here is still under development and we are making improvements to achieve better accuracy. More of it will be described in part-2 of this series.
 
 
 **References**
