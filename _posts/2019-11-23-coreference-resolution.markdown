@@ -55,6 +55,25 @@ Features used:
 
 We run forward propogation through BERT on our data and extract the output of last layer. This output is the embeddings that we use for creating our features. Once all the feature words/expression are extracted, we extract BERT embeddings for these features. These embeddings are then concatenated & used as features to train the Multi-layer perceptron model.
 
+**Steps in detail**
+
+To start with you must be having development & test sets. Development set will be used for training the model & test set will be used for final score.
+
+1. Create input dataset for BERT by setting "create_bert_input=True"
+This step will create data in format neeeded by BERT & save it to a text file.
+```
+from coreference import CoreferenceResolution
+CoreferenceResolution.create_bert_input(development_data, 'dev')
+```
+2. input_<data_type>.txt file will be generated in temp folder of project
+3. Use the input file to train BERT embeddings. 
+4. Do the above steps for all the datasets (train/test)
+5. If you already have BERT embeddings, set create_bert_input=False & run the script.
+6. Once you have the embeddings, extract relevant features. Currently we extract above mentioned features from the text. This step has scope for improvements. 
+```
+development_data.apply(CoreferenceResolution.extract_features, axis=1)
+```
+
 
 **References**
 - https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
