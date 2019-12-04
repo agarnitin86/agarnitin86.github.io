@@ -71,8 +71,22 @@ CoreferenceResolution.create_bert_input(development_data, 'dev')
 5. If you already have BERT embeddings, set create_bert_input=False & run the script.
 6. Once you have the embeddings, extract relevant features. Currently we extract above mentioned features from the text. This step has scope for improvements. 
 ```
-development_data.apply(CoreferenceResolution.extract_features, axis=1)
+development_data['feature_words'] = development_data.apply(CoreferenceResolution.extract_features, axis=1)
+test_data['feature_words'] = test_data.apply(CoreferenceResolution.extract_features, axis=1)
 ```
+7. Features that we have created are words/phrases, we need to convert them to numerical format using embeddings. So, extract embeddings for these features using:
+```
+feature_em_dev   = CoreferenceResolution.extract_bert_embedding_for_word(development_data, 'dev')
+feature_em_test  = CoreferenceResolution.extract_bert_embedding_for_word(test_data, 'test')
+```
+8. Concatenate embeddings to create features
+```
+dev_emb_all = CoreferenceResolution.merge_all_features(development_emb, feature_em_dev)
+test_emb_all = CoreferenceResolution.merge_all_features(test_emb, feature_em_test)
+```
+9. We can add additional features if want to use to our dataframe at this step.
+
+10. Next we train the classifier using the above created features. 
 
 
 **References**
