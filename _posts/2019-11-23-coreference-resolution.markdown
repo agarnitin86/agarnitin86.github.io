@@ -38,7 +38,7 @@ BERT is a contextual model & takes learnings from techniques like Semi-supervise
 
 **Problem statement**
 
-Givent the document, anaphora, and two antecedents or precedents, resolve, which of the two antecedents/precedents does the anaphora refer to. 
+Given the document, anaphora, and two antecedents or precedents, resolve, which of the two antecedents/precedents does the anaphora refer to. 
 
 **Solution approach**
 Here, we try to use BERT to solve the above mentioned probelm. The problem is formulated as a binary classification problem with two antecedents/precedents being the two classes.
