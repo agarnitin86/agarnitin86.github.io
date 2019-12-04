@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Anaphora resolution for binary entities using BERT"
+title:  "Anaphora resolution for binary entities using BERT - Part-1"
 date:   2019-11-23 17:49:34
 categories: nlp, coreference resolution
 ---
 
-**Anaphora resolution** is the task of finding all expressions that refer to the same entity in a text. It is an important step for a lot of higher level NLP tasks that involve natural language understanding such as document summarization, question answering, and information extraction. Putting in simple words, it can be defined as the task of resolving pronouns like *he, she, you, me, I, we, us, this, them, that, etc* to their matching entity in given context. Context here can be same sentence, paragraph or a larger piece of text.
-Entity can be a named entity like name of person, place, organization, etc, or in more complex settings it can be noun phrase, verb phrase, sentence, or even whole paragraph.
-Presence of 
+***Anaphora resolution*** *can be defined as the task of resolving pronouns like* ***he, she, you, me, I, we, us, this, them, that, etc*** *to their matching entity in given context.* Context here can be same sentence, paragraph or a larger piece of text. Entity can be a named entity like name of person, place, organization, etc, or in more complex settings it can be noun phrase, verb phrase, sentence, or even whole paragraph. It may not be the final task of NLP problems, but, it is an important task for many high level NLP tasks such as document summarization, question answering, information extraction, aspect based sentiment analysis, etc. 
 
-Primary types: 
+For example: "I have been using **<<brand_name>>** since last 4 years. **Their** products are really good."
+To attribute the sentiment of second sentence to <<brand_name>> we will need to resolve **their**, which refers to <<brand_name>>
+
+Primary types<sup>[1]</sup>: 
 
 - Pronominal: This is the most common type where a referent is referred by a pronoun.
 Example: "John found the love of his life" where 'his' refers to 'John'.
@@ -25,13 +26,13 @@ Continued Example: "He started a new one" where 'one' refers to 'The relationshi
 For eg.,
 Because ***she*** was going to the departmental store, ***Mary*** was asked to pick up the vegetables.
 
-**BERT (Bidirectional Encoder Representations from Transformers)** is one of latest developments in the field of NLP by Google.
+**BERT (Bidirectional Encoder Representations from Transformers)<sup>[2]</sup>** is one of latest developments in the field of NLP by Google.
 The [paper](https://arxiv.org/pdf/1810.04805.pdf) presents two model sizes for BERT:
 
 - [BERT-Large, Uncased (Whole Word Masking)][BERT_Large_Uncased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 - [BERT-Large, Cased (Whole Word Masking)][BERT_Large_Cased]: 24-layer, 1024-hidden, 16-heads, 340M parameters
 
-BERT is a method of training a general-purpose "language understanding" model on a large text corpus (like Wikipedia), and then using that model for downstream NLP tasks. BERT is the first unsupervised, deeply bidirectional system for pre-training NLP. Pre-trained models can be either context-free or contextual. Models like word2vec & GloVe are Context-free models. These models generate a single "word embedding" representation for each word in the vocabulary. But, based on the context in which a word is used it might have a different meaning & hence a different representation, i.e., more than one representations of same word should be possible, which is handled by Contextual models.
+BERT is the best example of Transfer Learning where we train a general-purpose model on a large text corpus and use that model to solve different NLP tasks. BERT is the first unsupervised, deeply bidirectional system for pre-training NLP. Pre-trained models can be either context-free or contextual. Models like word2vec & GloVe are Context-free models. These models generate a single "word embedding" representation for each word in the vocabulary. But, based on the context in which a word is used it might have a different meaning & hence a different representation, i.e., more than one representations of same word should be possible, which is handled by Contextual models.
 
 BERT is a contextual model & takes learnings from techniques like Semi-supervised Sequence Learning, Generative Pre-Training, ELMo, and ULMFit. Major enhancement comes with being *Deeply Bidirectional*, which means, while computing the representation of a word, it takes into account both left & right context in a "deep" manner.
 
@@ -86,12 +87,15 @@ test_emb_all = CoreferenceResolution.merge_all_features(test_emb, feature_em_tes
 ```
 9. We can add additional features if want to use to our dataframe at this step.
 
-10. Next we train the classifier using the above created features. 
+10. Next we train the classifier using the above created features. We used multi-layered perceptrons for training the model. Again, this piece can be modified to try out other classifiers/networks.
+
+The piece of work described here is still under development and we are working on making improvements to achieve better accuracy. More of it will be described in part-2 of this series.
 
 
 **References**
-- https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
-- https://github.com/google-research/bert
+
+[1] https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
+[2] https://github.com/google-research/bert
 
 [BERT_Large_Uncased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip
 [BERT_Large_Cased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip
