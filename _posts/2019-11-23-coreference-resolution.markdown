@@ -95,7 +95,10 @@ The piece of work described here is still under development and we are working o
 **References**
 
 [1] https://nlp.stanford.edu/courses/cs224n/2003/fp/iqsayed/project_report.pdf
+
 [2] https://github.com/google-research/bert
+
+[3] https://www.kaggle.com/c/gendered-pronoun-resolution
 
 [BERT_Large_Uncased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_uncased_L-24_H-1024_A-16.zip
 [BERT_Large_Cased]: https://storage.googleapis.com/bert_models/2019_05_30/wwm_cased_L-24_H-1024_A-16.zip
