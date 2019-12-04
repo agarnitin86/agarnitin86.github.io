@@ -2,7 +2,7 @@
 layout: post
 title:  "Anaphora resolution for binary entities using BERT - Part-1"
 date:   2019-11-23 17:49:34
-categories: nlp, coreference resolution
+categories: NLP, Analphora Resolution
 ---
 
 ***Anaphora resolution*** *can be defined as the task of resolving pronouns like* ***he, she, you, me, I, we, us, this, them, that, etc*** *to their matching entity in given context.* Context here can be same sentence, paragraph or a larger piece of text. Entity can be a named entity like name of person, place, organization, etc, or in more complex settings it can be noun phrase, verb phrase, sentence, or even whole paragraph. It may not be the final task of NLP problems, but, it is an important task for many high level NLP tasks such as document summarization, question answering, information extraction, aspect based sentiment analysis, etc. 
