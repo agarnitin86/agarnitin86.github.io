@@ -37,9 +37,9 @@ Sample output :
 
 Vocabulary : \
 [‘<UNK>’, ‘This’, ‘is’, ‘a’, ‘cat’, ‘must’, ‘be’, ‘boy’, ‘dog’] \
-Transformed documents :\
-[[1 2 3 4 0]\
-[1 5 6 7 0]\
+Transformed documents : \
+[[1 2 3 4 0] \
+[1 5 6 7 0] \
 [1 2 3 3 8]]
 
 
