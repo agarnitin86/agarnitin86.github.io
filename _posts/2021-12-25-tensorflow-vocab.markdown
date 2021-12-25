@@ -5,6 +5,7 @@ date:   2021-12-25 17:49:34
 categories: python, tensorflow, nlp, gpu
 ---
 
+
 ```python
 x_text = ['This is a cat','This must be boy', 'This is a a dog']
 max_document_length = max([len(x.split(" ")) for x in x_text])
