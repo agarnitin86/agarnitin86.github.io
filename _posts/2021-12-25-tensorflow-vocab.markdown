@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Tensorflow-How to extract vocabulary from tensorflow VocabularyProcessor object"
-date:   2019-11-19 17:49:34
+title:  "Tensorflow-Extract vocabulary from tensorflow VocabularyProcessor object"
+date:   2021-12-25 17:49:34
 categories: python, tensorflow, nlp, gpu
 ---
 
@@ -31,6 +31,16 @@ print(vocabulary)
 print("Transformed documents : ")
 print(x)
 ```
+
+Sample output :
+
+Vocabulary :
+[‘<UNK>’, ‘This’, ‘is’, ‘a’, ‘cat’, ‘must’, ‘be’, ‘boy’, ‘dog’]
+Transformed documents :
+[[1 2 3 4 0]
+[1 5 6 7 0]
+[1 2 3 3 8]]
+
 
 ---
 
