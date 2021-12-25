@@ -5,11 +5,6 @@ date:   2019-11-19 17:49:34
 categories: python, tensorflow, nlp, gpu
 ---
 
-## How to extract vocabulary from tensorflow VocabularyProcessor object
-
-
-This code demonstrates how to use ColumnTransformer
-
 ```python
 x_text = ['This is a cat','This must be boy', 'This is a a dog']
 max_document_length = max([len(x.split(" ")) for x in x_text])
