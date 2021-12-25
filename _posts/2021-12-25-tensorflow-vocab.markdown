@@ -41,7 +41,6 @@ Transformed documents :
 [1 5 6 7 0]
 [1 2 3 3 8]]
 
-
 ---
 
 
