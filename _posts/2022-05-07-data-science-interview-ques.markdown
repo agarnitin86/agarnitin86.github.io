@@ -1,9 +1,5 @@
 ﻿
-<script src="//yihui.org/js/math-code.js" defer></script>
-<!-- Just one possible MathJax CDN below. You may use others. -->
-<script defer
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
 #
 # Generative vs Discriminative Models
 ## Difference b/w generative & discriminative models
@@ -28,7 +24,7 @@ Parametric methods involve a two-step model-based approach.
 
 \1. First, we make an assumption about the functional form, or shape of f. For example, one very simple assumption is that f is linear in X:
 
-<img src="https://render.githubusercontent.com/render/math?math=f(x)=\beta_0\+\beta_1x_1\+\beta_2x_2 + \beta_px_p.......2.4">
+<img src="https://render.githubusercontent.com/render/math?math=a+b">
 
 
 
