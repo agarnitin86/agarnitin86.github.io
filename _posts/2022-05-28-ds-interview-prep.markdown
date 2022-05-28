@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "ds interview"
-date:   2019-11-19 17:49:34
-categories: python, sklearn, gpu
+date:   2022-05-27 17:49:34
+categories: data science, machine learning, interview
 ---
 
 
