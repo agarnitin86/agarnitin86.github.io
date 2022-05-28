@@ -199,6 +199,13 @@ Upload your private key file and try to re-connect.
 
 ---
 
+**How to add equations to you Readme file in github**
+
+**Solution**
+https://stackoverflow.com/questions/35498525/latex-rendering-in-readme-md-on-github
+Take your latex equation and go to http://www.codecogs.com/latex/eqneditor.php, at the bottom of the area where your equation appears displayed there is a tiny dropdown menu, pick URL encoded and then paste that in your github markdown
+
+---
 
 <div id="disqus_thread"></div>
 <script>
