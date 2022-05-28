@@ -10,8 +10,6 @@ categories: data science, machine learning, interview
 ISLR = Introduction to Statistical Learning  
 ESLR = Elements of Statistical Learning
 
-[clickme](https://github.com/agarnitin86/Data-Science-Interview-Preparation/blob/main/classification.md)
-
 ## Generative vs Discriminative Models
 ## Difference b/w generative & discriminative models
 1. [Generative vs. Discriminative Machine Learning Models - Unite.AI](https://www.unite.ai/generative-vs-discriminative-machine-learning-models/)
