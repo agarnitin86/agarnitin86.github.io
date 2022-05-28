@@ -16,6 +16,7 @@ ESLR = Elements of Statistical Learning
 1. [machine learning - What is the difference between a generative and a discriminative algorithm? - Stack Overflow](https://stackoverflow.com/questions/879432/what-is-the-difference-between-a-generative-and-a-discriminative-algorithm)
 
 
+
 |**Generative**|**Discriminative**|
 | :-- | :-- |
 |Generative models aim to capture the actual distribution of the classes in the dataset.|Discriminative models model the decision boundary for the dataset classes.|
