@@ -207,6 +207,7 @@ Take your latex equation and go to http://www.codecogs.com/latex/eqneditor.php, 
 
 ---
 
+
 <div id="disqus_thread"></div>
 <script>
 
