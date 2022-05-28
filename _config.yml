@@ -9,6 +9,7 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: agarnitin86
 github_username:  agarnitin86
 linkedin_username: nitinagarwal86
+future: true
 
 # Build settings
 markdown: kramdown
