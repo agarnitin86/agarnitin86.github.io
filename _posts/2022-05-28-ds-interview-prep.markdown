@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "ds interview"
+date:   2019-11-19 17:49:34
+categories: python, sklearn, gpu
+---
+
 
 ## Data-Science-Interview-Preparation
 ISLR = Introduction to Statistical Learning  
