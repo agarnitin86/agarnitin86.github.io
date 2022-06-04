@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Anaphora resolution for binary entities using BERT - Part-1"
 date:   2019-11-23 17:49:34
+category: BERT
 categories: NLP, Analphora Resolution
 ---
 

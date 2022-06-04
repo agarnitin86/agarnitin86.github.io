@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Tricks, Tips & solutions"
 date:   2019-11-19 17:49:34
+category: Generic
 categories: python, sklearn, gpu
 ---
 

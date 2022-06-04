@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Tensorflow-Extract vocabulary from tensorflow VocabularyProcessor object"
 date:   2021-12-25 09:49:34
+category: Tensorflow
 categories: python, tensorflow, nlp, gpu
 ---
 

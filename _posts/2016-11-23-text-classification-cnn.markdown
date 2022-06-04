@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Text classification using CNN : Example"
 date:   2016-12-23 17:49:34
+category: NLP
 categories: jekyll update
 ---
 
