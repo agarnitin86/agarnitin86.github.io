@@ -1,5 +1,0 @@
-I"�<h4 id="code">Code</h4>
-<p>```python
-x_text = [‘This is a cat’,’This must be boy’, ‘This is a a dog’]
-max_document_length = max([len(x.split(“ “)) for x in x_text])</p>
-:ET
