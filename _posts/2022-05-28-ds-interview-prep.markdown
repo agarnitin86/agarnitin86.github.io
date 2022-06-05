@@ -159,12 +159,12 @@ Where,
 1. Forward stagewise regression
 
 
-|Best subset|<p>1. For each k ∈ {0, 1, 2, . . . , p}, where p is #predictors, the subset of size k that gives smallest residual sum of squares.</p><p>2. Typically, we choose the smallest model that minimizes an estimate of the expected prediction error.</p>|
 | :- | :-- |
-|Forward stepwise|<p>1. Is a greedy algorithm </p><p>2. Starts with the intercept, and,</p><p>3. then sequentially adds into the model the predictor that most improves the fit. With many candidate predictors, this might seem like a lot of computation; however, clever updating algorithms can exploit the QR decomposition for the current fit to rapidly establish the next candidate </p><p>4. for large p, we cannot compute the best subset sequence, but we can always compute the forward stepwise sequence(even when p ≫ N ).</p><p>5. forward stepwise is a more constrained search, and will have lower variance, but perhaps more bias than best subset</p>|
-|Backward stepwise|<p>1. starts with the full model, then,</p><p>2. Sequentially deletes the predictor that has the least impact on the fit. </p><p>3. The candidate for dropping is the variable with the smallest Z-score. Backward selection can only be used when N > p, while forward stepwise can always be used.</p>|
-|Hybrid selection|<p>consider both forward and backward moves at each step, and select</p><p>the “best” of the two.</p>|
-|Forward stagewise|<p>1. more constrained than forward stepwise regression.</p><p>2. Starts like forward-stepwise regression, with an intercept equal to ȳ, and centered predictors with coefficients initially all 0.</p><p>3. At each step, the algorithm identifies the variable most correlated with the current residual. </p><p>4. It then computes the simple linear regression coefficient of the residual on this chosen variable, and then adds it to the current coefficient for that variable. This is continued till none of the variables have correlation with the residuals—i.e. the least-squares fit when N > p.</p>|
+|Best subset|1. For each k ∈ {0, 1, 2, . . . , p}, where p is #predictors, the subset of size k that gives smallest residual sum of squares.2. Typically, we choose the smallest model that minimizes an estimate of the expected prediction error.|
+|Forward stepwise|1. Is a greedy algorithm 2. Starts with the intercept, and,3. then sequentially adds into the model the predictor that most improves the fit. With many candidate predictors, this might seem like a lot of computation; however, clever updating algorithms can exploit the QR decomposition for the current fit to rapidly establish the next candidate 4. for large p, we cannot compute the best subset sequence, but we can always compute the forward stepwise sequence(even when p ≫ N ).5. forward stepwise is a more constrained search, and will have lower variance, but perhaps more bias than best subset|
+|Backward stepwise|1. starts with the full model, then,2. Sequentially deletes the predictor that has the least impact on the fit. 3. The candidate for dropping is the variable with the smallest Z-score. Backward selection can only be used when N > p, while forward stepwise can always be used.|
+|Hybrid selection|consider both forward and backward moves at each step, and selectthe “best” of the two.|
+|Forward stagewise|1. more constrained than forward stepwise regression.2. Starts like forward-stepwise regression, with an intercept equal to ȳ, and centered predictors with coefficients initially all 0.3. At each step, the algorithm identifies the variable most correlated with the current residual. 4. It then computes the simple linear regression coefficient of the residual on this chosen variable, and then adds it to the current coefficient for that variable. This is continued till none of the variables have correlation with the residuals—i.e. the least-squares fit when N > p.|
 
 ## Difference between Ridge & Lasso regression.
 
@@ -179,7 +179,7 @@ Lasso Regression:
 |Ridge Regression|Lasso Regression|
 | :-- | :-- |
 |The shrinkage penalty is applied to <img src="https://latex.codecogs.com/svg.image?\beta_1\cdots\beta_p"> , but not to the intercept <img src="https://latex.codecogs.com/svg.image?\beta_0">. We do not want to shrink the intercept, which is simply a measure of the mean value of the response when <img src="https://latex.codecogs.com/svg.image?x_{i1}=x_{i2}=\cdots=x_{ip}=0">. (More explanation in ESLR pg. 64)||
-|<p>It is best to apply ridge regression after</p><p>standardizing the predictors, using the formula</p><p>![](image/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.013.png)</p><p>Because, the ridge solutions are not equivariant under scaling of the inputs.</p>||
+|It is best to apply ridge regression after standardizing the predictors, using the formula![not found](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.013.png)Because, the ridge solutions are not equivariant under scaling of the inputs.||
 |Ridge regression will include all p predictors in the final model. The penalty <img src="https://latex.codecogs.com/svg.image?\lambda.\Sigma{\beta_j}^2"> in (6.5) will shrink all of the coefficients towards zero, but it will not set any of them exactly to zero (unless <img src="https://latex.codecogs.com/svg.image?\lambda=\infty">). This may not be a problem for prediction accuracy, but it can create a challenge in model interpretation in settings in which the number of variables p is quite large. |L1 penalty has the effect of forcing some of the coefficient estimates to be exactly equal to zero when the tuning parameter λ is sufficiently large.|
 |Uses l2 penalty|Uses l1 penalty|
 |The l2 norm of a coefficient vector β is given by <img src="https://latex.codecogs.com/svg.image?\|\|\beta\|\|_2=\Sigma{\beta_j}^2">|The l1 norm of a coefficient vector β is given by <img src="https://latex.codecogs.com/svg.image?\|\|\beta\|\|_1=\Sigma\|\beta_j\|">.|
@@ -197,7 +197,7 @@ Refer to page 221 of Introduction to Statistical Learning. Section- “*The Vari
 ## What is confidence interval and prediction interval in Linear Regression?
 ## Derive equations for Least squares in vector & matrix notation
 ## Can we use Linear Regression for binary classification?
-#
+
 # Classification
 ## Some approaches for classification
 1. Using linear regression of a Indicator Matrix
@@ -238,7 +238,7 @@ Let us make following parametric assumption:
 
 MLE is used to find the model parameters while maximizing, 
 
-***P(observed data|model parameters)***
+***P(observed data\|model parameters)***
 
 For Logistic Regression, we need to find the model parameter **w** that maximizes conditional probability,
 
@@ -249,7 +249,7 @@ For Logistic Regression, we need to find the model parameter **w** that maximize
 1. [Logit.dvi (rutgers.edu)](https://stat.rutgers.edu/home/pingli/papers/Logit.pdf)
 1. [ADAfaEPoV (cmu.edu)](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf)
 1. [A Gentle Introduction to Logistic Regression With Maximum Likelihood Estimation (machinelearningmastery.com)](https://machinelearningmastery.com/logistic-regression-with-maximum-likelihood-estimation/)
-1. [Logistic Regression and Maximum Likelihood Estimation Function | by Puja P. Pathak | CodeX | Medium](https://medium.com/codex/logistic-regression-and-maximum-likelihood-estimation-function-5d8d998245f9)
+1. [Logistic Regression and Maximum Likelihood Estimation Function \| by Puja P. Pathak \| CodeX \| Medium](https://medium.com/codex/logistic-regression-and-maximum-likelihood-estimation-function-5d8d998245f9)
 
 ## Difference b/w Logistic Regression & Linear Discriminant Analysis
 ***[Source: ISLR Page-151]***
@@ -269,7 +269,7 @@ For Logistic Regression, we need to find the model parameter **w** that maximize
 | :-- | :-- |
 |All the classes have common covariance matrix Σ<sub>k</sub> = Σ ∀ *k*|Each class has its own covariance matrix, Σ<sub>k</sub>|
 |Decision boundary- Linear|Decision boundary- Quadratic|
-|Discriminant Function![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.008.png)|<p>Discriminant Function</p><p>![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.009.png)</p>|
+|Discriminant Function![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.008.png)|Discriminant Function![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.009.png)|
 |Since covariance matrices is common for all classes no such problem|Since separate covariance matrices must be computed for each class, when p (#Features) is large, number of parameters increases dramatically.|
 |***[Source: ISLR Page-142]*** LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and a common variance σ<sup>2</sup>|***[Source: ISLR Page-142]*** QDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean vector and covariance matrix Σ<sub>k</sub>|
 |With p predictors, estimating a covariance matrix requires estimating p(p+1)/2 parameters. |With p predictors and K classses, estimating a covariance matrix requires estimating K.p(p+1)/2 parameters|
@@ -285,7 +285,6 @@ When the classes are well-separated, the parameter estimates for the logistic re
 ## Compare SVM & Logistic Regression
 ***[Source: ISLR Page-357]*** SVM loss function is exactly zero for observations for which <img src="https://latex.codecogs.com/svg.image?y_i(\beta_0&plus;\beta_1x_{i1}&plus;\cdots&plus;\beta_px_{ip})>=1&space;">  these correspond to observations that are on the correct side of the margin. In contrast, the loss function for logistic regression is not exactly zero anywhere. But it is very small for observations that are far from the decision boundary. Due to the similarities between their loss functions,  logistic regression and the support vector classifier often give very similar results. When the classes are well separated, SVMs tend to behave better than logistic regression; in more overlapping regimes, logistic regression is often preferred.
 
-#
 # KNN
 ## Effect of K on training error
 ***[Source: ESLR Page 15]*** Error on the training data should be approximately an increasing function of k, and will always be 0 for k = 1. 
@@ -391,7 +390,7 @@ Of course, this is not practical because we generally do not have access to mult
 |Model|Description|
 | :-- | :-- |
 |Bagging|We build a number of decision trees on bootstrapped training samples using all the predictors|
-|RF|<p>We build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors. A fresh sample of m predictors is taken at each split, and typically we choose m ≈ √p. </p><p>Why does RF reduce more variance as compared to Bagging? Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, averaging many highly correlated quantities does not lead to as large of a reduction in  variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance  over a single tree in this setting. Random forests overcome this  problem by forcing each split to consider only a subset of the predictors. Therefore, on average (p − m)/p of the splits will not even consider the strong predictor, and so other predictors will have more of a chance. We can think of this process as decorrelating the trees, thereby making the average of the resulting trees less variable and hence more reliable.</p>|
+|RF|We build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors. A fresh sample of m predictors is taken at each split, and typically we choose m ≈ √p. Why does RF reduce more variance as compared to Bagging? Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, averaging many highly correlated quantities does not lead to as large of a reduction in  variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance  over a single tree in this setting. Random forests overcome this  problem by forcing each split to consider only a subset of the predictors. Therefore, on average (p − m)/p of the splits will not even consider the strong predictor, and so other predictors will have more of a chance. We can think of this process as decorrelating the trees, thereby making the average of the resulting trees less variable and hence more reliable.|
 |Boosting|Boosting works similar to Bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is fit on a modified version of the original data set.|
 ## Cross Validation
 
@@ -403,7 +402,7 @@ Of course, this is not practical because we generally do not have access to mult
 | :-- | :-- |
 |LOOCV has the potential to be expensive to implement, since the model has to be fit n times. This can be very time consuming if n is large, and if each individual model is slow to fit.|Computationally less expensive|
 |each training set contains n − 1 observations - has lower bias|each training set contains (k − 1)n/k observations—fewer than in the LOOCV approach - has higher bias|
-|LOOCV has higher variance than does k-fold CV with k<n. When we perform LOOCV, we are in effect averaging the outputs of n fitted models, each of which is trained on an almost identical set of observations; therefore, these outputs are highly (positively) correlated with each other|<p>When we perform k-fold CV with k<n, we are averaging the outputs of k fitted models that are somewhat less correlated with each other, since the overlap between the training sets in each model is smaller.</p><p>Since the mean of many highly correlated quantities has higher variance than does the mean of many quantities that are not as highly correlated, the test error estimate resulting from LOOCV tends to have higher variance than does the test error estimate resulting from k-fold CV.</p>|
+|LOOCV has higher variance than does k-fold CV with k<n. When we perform LOOCV, we are in effect averaging the outputs of n fitted models, each of which is trained on an almost identical set of observations; therefore, these outputs are highly (positively) correlated with each other|When we perform k-fold CV with k<n, we are averaging the outputs of k fitted models that are somewhat less correlated with each other, since the overlap between the training sets in each model is smaller.Since the mean of many highly correlated quantities has higher variance than does the mean of many quantities that are not as highly correlated, the test error estimate resulting from LOOCV tends to have higher variance than does the test error estimate resulting from k-fold CV.|
 ## Classification Evaluation Metrics
 1. Sensitivity = Recall = True Positive Rate
  
@@ -502,7 +501,7 @@ Gradient clipping ensures the gradient vector g has norm at most equal to thresh
 1. [Activation Functions: Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax | by Mukesh Chaudhary | Medium](https://medium.com/@cmukesh8688/activation-functions-sigmoid-tanh-relu-leaky-relu-softmax-50d3778dcea5)
 
 ## Compare Loss Functions
-1. [Loss Function | Loss Function In Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)![](Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.030.png)
+1. [Loss Function | Loss Function In Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)![Not Found](images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.030.png)
 
 ## Compare Optimizers
 [Line to coursera](https://www.coursera.org/learn/deep-neural-network/lecture/qcogH/mini-batch-gradient-descent)
