@@ -11,9 +11,6 @@ categories: data science, machine learning, interview
 ISLR = Introduction to Statistical Learning  
 ESLR = Elements of Statistical Learning
 
-[clickme](https://github.com/agarnitin86/Data-Science-Interview-Preparation/blob/main/classification.md)
-
-## Generative vs Discriminative Models
 ## Difference b/w generative & discriminative models
 1. [Generative vs. Discriminative Machine Learning Models - Unite.AI](https://www.unite.ai/generative-vs-discriminative-machine-learning-models/)
 1. [machine learning - What is the difference between a generative and a discriminative algorithm? - Stack Overflow](https://stackoverflow.com/questions/879432/what-is-the-difference-between-a-generative-and-a-discriminative-algorithm)
@@ -28,10 +25,8 @@ ESLR = Elements of Statistical Learning
 |Generative models are impacted by the presence of outliers more than discriminative models.|Discriminative models have the advantage of being more robust to outliers, unlike the generative models.Discriminative models are more robust to outliers compared to generative models.|
 |E.g. Linear Discriminant Analysis, HMM, Bayesian Networks|E.g. SVM, Logistic regression, Decision Trees, Random Forests|
 
-# Parametric & Non-Parametric models
 ## Difference b/w parametric & non-parametric models
 ***[Source: ISLR Page-21]*:** 
-
 
 Parametric methods involve a two-step model-based approach.
 
@@ -60,7 +55,7 @@ Some examples of parametric and non-parametric models:
 Non-parametric approaches can have a major advantage over parametric approaches: by avoiding the assumption of a particular functional form for *f*, they have the potential to accurately fit a wider range of possible shapes for f. Any parametric approach brings with it the possibility that the functional form used to estimate f is very different from the true f, in which case the resulting model will not fit the data well. 
 
 In contrast, non-parametric approaches completely avoid this danger, since essentially no assumption about the form of f is made. But non-parametric approaches do suffer from a major disadvantage: since they do not reduce the problem of estimating f to a small number of parameters, a very large number of observations (far more than is typically needed for a parametric approach) is required in order to obtain an accurate estimate for f.
-# Bias & Variance
+
 ## What do we mean by the variance and bias of a statistical learning method? 
 **Variance** refers to the amount by which *f* would change if we estimated it using a different training data set. Since the training data are used to fit the statistical learning method, different training data sets will result in a different *f* . But ideally the estimate for *f* should not vary too much between training sets. However, if a method has high variance, then small changes in the training data can result in large changes in *f*. In general, more flexible statistical methods have higher variance.
 
@@ -74,7 +69,6 @@ On the other hand,
 1. Better evaluation metric – like Lift, ROC curves, PR Curves
 1. Cost sensitive learning : [Cost-Sensitive Learning for Imbalanced Classification (machinelearningmastery.com)](https://machinelearningmastery.com/cost-sensitive-learning-for-imbalanced-classification/)
 1. Class weight balancing : [How To Dealing With Imbalanced Classes in Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/)
-
 1. Weighted loss function: [Handling Class Imbalance by Introducing Sample Weighting in the Loss Function \| by Ishan Shrivastava \| GumGum Tech Blog \| Medium](https://medium.com/gumgum-tech/handling-class-imbalance-by-introducing-sample-weighting-in-the-loss-function-3bdebd8203b4)
 1. One Class SVM
 
@@ -100,9 +94,10 @@ On the other hand,
 Following are the assumptions:
 1. Random error <img src="https://latex.codecogs.com/svg.image?\varepsilon"> has <img src="https://latex.codecogs.com/svg.image?E(\varepsilon)=0">
 1. <img src="https://latex.codecogs.com/svg.image?\varepsilon"> is independent of X
-1. **[Source: ISLR Page-86]**: Two of the most important assumptions state that the relationship between the predictors and response are additive and linear. The additive assumption means that the effect of changes in a predictor <img src="https://latex.codecogs.com/svg.image?X_j"> on the response Y is independent of the values of the other predictors. The linear assumption states that the change in the response Y due to a one-unit change in <img src="https://latex.codecogs.com/svg.image?X_j"> is constant, regardless of the value of <img src="https://latex.codecogs.com/svg.image?X_j">
-1. **[Source: ISLR Page-93]**: An important assumption of the linear regression model is that the error terms, ε1,ε2, …,εn, are uncorrelated.
-1. **[Source: ISLR Page-95]**: Error terms have a constant variance, <img src="https://latex.codecogs.com/svg.image?Var(\varepsilon_i)=\sigma^2">. Unfortunately, it is often the case that the variances of the error terms are non-constant. For instance, the variances of the error terms may increase with the value of the response. One can identify non-constant variances in the errors, or heteroscedasticity, from the presence of a funnel shape in the residual plot.
+1. ***[Source: ISLR Page-86]***: Two of the most important assumptions state that the relationship between the predictors and response are additive and linear. The additive assumption means that the effect of changes in a predictor <img src="https://latex.codecogs.com/svg.image?X_j"> on the response Y is independent of the values of the other predictors. The linear assumption states that the change in the response Y due to a one-unit change in <img src="https://latex.codecogs.com/svg.image?X_j"> is constant, regardless of the value of <img src="https://latex.codecogs.com/svg.image?X_j">
+1. ***[Source: ISLR Page-93]***: An important assumption of the linear regression model is that the error terms, ε1,ε2, …,εn, are uncorrelated.
+1. ***[Source: ISLR Page-95]***: Error terms have a constant variance, <img src="https://latex.codecogs.com/svg.image?Var(\varepsilon_i)=\sigma^2">. Unfortunately, it is often the case that the variances of the error terms are non-constant. For instance, the variances of the error terms may increase with the value of the response. One can identify non-constant variances in the errors, or heteroscedasticity, from the presence of a funnel shape in the residual plot.
+
 ## Implication of the assumption that errors are independent & identically distributed
 Because of this assumption, we average squared errors uniformly in our Expected Prediction error criterion. If the errors were dependent, then, weightage of each error might have been different in the error function.
 
@@ -203,7 +198,7 @@ Refer to page 221 of Introduction to Statistical Learning. Section- “*The Vari
 1. Using linear regression of a Indicator Matrix
 1. Linear Discriminant Analysis
 1. Quadratic Discriminant Analysis
-1. Regularized Discriminant Analysis ***[Source: ESLR Page-112]*** ![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.007.png) 
+1. Regularized Discriminant Analysis ***[Source: ESLR Page-112]***  ![](/images/ds-interview/Aspose.Words.95ba44c8-92c8-4d90-8a97-630964b6dcab.007.png) 
 1. Logistic Regression
 
 ## What is log odds?
@@ -225,7 +220,8 @@ p = the probability of an event happening
 
 ## MLE Estimation for Logistic Regression
 Although we could use (non-linear) least squares to fit the logistic model , the more general method of maximum likelihood is preferred, since it has better statistical properties. In logistic regression, we use the logistic function,
-<img src="https://latex.codecogs.com/svg.image?p(X)=\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}">
+<!-- <img src="https://latex.codecogs.com/svg.image?p(X)=\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}"> -->
+
 <img src="https://latex.codecogs.com/svg.image?\begin{aligned}p(X)&=\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}\cdots\cdots(1)&space;\\1-p(X)&=1-\frac{\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}&space;\\&=\frac{1&plus;\exp^{\beta_0&plus;\beta_1X}-\exp^{\beta_0&plus;\beta_1X}}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}&space;\\&=\frac{1}{1&plus;{\exp^{\beta_0&plus;\beta_1X}}}\cdots\cdots(2)&space;\end{aligned}">
 
 Dividing (1) by (2) & taking log on both sides,
@@ -288,14 +284,13 @@ When the classes are well-separated, the parameter estimates for the logistic re
 # KNN
 ## Effect of K on training error
 ***[Source: ESLR Page 15]*** Error on the training data should be approximately an increasing function of k, and will always be 0 for k = 1. 
-It appears that k-nearest-neighbor fits have a single parameter, the number of neighbors k, compared to the p parameters in least-squares fits. Although this is the case, we will see that the effective number of parameters of k-nearest neighbors is N/k and is generally bigger than p, and decreases with increasing k. To get an idea of why, note that if the neighborhoods were nonoverlapping, there would be N/k neighborhoods and we would fit one parameter (a mean) in each neighborhood. It is also clear that we cannot use sum-of-squared errors on the training
+It appears that k-nearest-neighbor fits have a single parameter, the number of neighbors k, compared to the p parameters in least-squares fits. Although this is the case, we will see that the effective number of parameters of k-nearest neighbors is N/k and is generally bigger than p, and decreases with increasing k. To get an idea of why, note that if the neighborhoods were nonoverlapping, there would be N/k neighborhoods and we would fit one parameter (a mean) in each neighborhood. It is also clear that we cannot use sum-of-squared errors on the training set as a criterion for picking k, since we would always pick k = 1.
 
-set as a criterion for picking k, since we would always pick k = 1.
 ## How does bias & variance vary for KNN with the choice of K?
 ***[Source: ESLR Page 40]*** The choice of K has a drastic effect on the KNN classifier obtained. When K = 1, the decision boundary is overly flexible and finds patterns in the data that don’t correspond to the Bayes decision boundary. This corresponds to a classifier that has low bias but very high variance. As K grows, the method becomes less flexible and produces a decision boundary that is close to linear. This corresponds to a low-variance but high-bias classifier. 
 Just as in the regression setting, there is not a strong relationship between the training error rate and the test error rate. With K = 1, the KNN training error rate is 0, but the test error rate may be quite high. In general, as we use more flexible classification methods, the training error rate will decline but the test error rate may not. 
-# SVM
 
+# SVM
 ## What is Hyperplane?
 ***[Source: ISLR Page-68]***: In a p-dimensional space, a hyperplane is a flat affine subspace of hyperplane dimension p −1 For instance, in two dimensions, a hyperplane is a flat one-dimensional subspace—in other words, a line. In three dimensions, a hyperplane is a flat two-dimensional subspace—that is, a plane. In p > 3 dimensions, it can be hard to visualize a hyperplane, but the notion of a
 (p − 1)-dimensional flat subspace still applies. The mathematical definition of a hyperplane is quite simple. In two dimensions, a hyperplane is defined by the equation
@@ -385,17 +380,14 @@ Of course, this is not practical because we generally do not have access to mult
 
 ## Compare DT, Bagging, RF, Boosting
 
-
-
 |Model|Description|
 | :-- | :-- |
 |Bagging|We build a number of decision trees on bootstrapped training samples using all the predictors|
 |RF|We build a number of decision trees on bootstrapped training samples. But when building these decision trees, each time a split in a tree is considered, a random sample of m predictors is chosen as split candidates from the full set of p predictors. The split is allowed to use only one of those m predictors. A fresh sample of m predictors is taken at each split, and typically we choose m ≈ √p. Why does RF reduce more variance as compared to Bagging? Suppose that there is one very strong predictor in the data set, along with a number of other moderately strong predictors. Then in the collection of bagged trees, most or all of the trees will use this strong predictor in the top split. Consequently, all of the bagged trees will look quite similar to each other. Hence the predictions from the bagged trees will be highly correlated. Unfortunately, averaging many highly correlated quantities does not lead to as large of a reduction in  variance as averaging many uncorrelated quantities. In particular, this means that bagging will not lead to a substantial reduction in variance  over a single tree in this setting. Random forests overcome this  problem by forcing each split to consider only a subset of the predictors. Therefore, on average (p − m)/p of the splits will not even consider the strong predictor, and so other predictors will have more of a chance. We can think of this process as decorrelating the trees, thereby making the average of the resulting trees less variable and hence more reliable.|
 |Boosting|Boosting works similar to Bagging, except that the trees are grown sequentially: each tree is grown using information from previously grown trees. Boosting does not involve bootstrap sampling; instead each tree is fit on a modified version of the original data set.|
+
 ## Cross Validation
-
 ## Compare LOOCV(Leave One Out Cross Validation) with K-Fold CV
-
 ***[Source: ISLR Page-180]*** 
 
 |LOOCV|K-Fold CV|
@@ -403,30 +395,26 @@ Of course, this is not practical because we generally do not have access to mult
 |LOOCV has the potential to be expensive to implement, since the model has to be fit n times. This can be very time consuming if n is large, and if each individual model is slow to fit.|Computationally less expensive|
 |each training set contains n − 1 observations - has lower bias|each training set contains (k − 1)n/k observations—fewer than in the LOOCV approach - has higher bias|
 |LOOCV has higher variance than does k-fold CV with k<n. When we perform LOOCV, we are in effect averaging the outputs of n fitted models, each of which is trained on an almost identical set of observations; therefore, these outputs are highly (positively) correlated with each other|When we perform k-fold CV with k<n, we are averaging the outputs of k fitted models that are somewhat less correlated with each other, since the overlap between the training sets in each model is smaller.Since the mean of many highly correlated quantities has higher variance than does the mean of many quantities that are not as highly correlated, the test error estimate resulting from LOOCV tends to have higher variance than does the test error estimate resulting from k-fold CV.|
+
 ## Classification Evaluation Metrics
-1. Sensitivity = Recall = True Positive Rate
- 
+1. Sensitivity = Recall = True Positive Rate\
 <img src="https://latex.codecogs.com/svg.image?\frac{TP}{TP&plus;FN}">
    
-2. Specificity = True Negative Rate
-
+2. Specificity = True Negative Rate\
 <img src="https://latex.codecogs.com/svg.image?\frac{TN}{TN&plus;FP}">
    
-3. Precision
-
+3. Precision\
 <img src="https://latex.codecogs.com/svg.image?\frac{TP}{TP&plus;FP}">
 
-4. False Positive Rate
-
+4. False Positive Rate\
 <img src="https://latex.codecogs.com/svg.image?\frac{FP}{FP&plus;TN}">
 
 ## Lift
 1. [Lift (data mining) - Wikipedia](https://en.wikipedia.org/wiki/Lift_\(data_mining\))
 1. [The Lift Curve in Machine Learning explained | Learn Machine Learning (howtolearnmachinelearning.com)](https://howtolearnmachinelearning.com/articles/the-lift-curve-in-machine-learning/)
+
 ## PCA
-
 ## Does scaling affect PCA outcome?
-
 ***[Source: ISLR Page-381]*** If in a dataset variables are measured on different scales, then the variable with large values might have high variance. If we perform PCA on the unscaled variables, then the first principal component loading vector will have a very large loading for this high variance variable, since that variable has by far the highest variance. 
 
 It is undesirable for the principal components obtained to depend on an arbitrary choice of scaling, and hence, we typically scale each variable to have standard deviation one before we perform PCA. 
@@ -435,12 +423,12 @@ It is undesirable for the principal components obtained to depend on an arbitrar
 ## Deep Learning
 
 ## How does dropout work in deep learning algorithms?
-1. [Dropout Regularization - Practical Aspects of Deep Learning | Coursera](https://www.coursera.org/lecture/deep-neural-network/dropout-regularization-eM33A)
-1. [Why Dropout is so effective in Deep Neural Network? | Towards Data Science](https://towardsdatascience.com/introduction-to-dropout-to-regularize-deep-neural-network-8e9d6b1d4386)
+1. [Dropout Regularization - Practical Aspects of Deep Learning \| Coursera](https://www.coursera.org/lecture/deep-neural-network/dropout-regularization-eM33A)
+1. [Why Dropout is so effective in Deep Neural Network? \| Towards Data Science](https://towardsdatascience.com/introduction-to-dropout-to-regularize-deep-neural-network-8e9d6b1d4386)
 
 ## What is the vanishing & exploding gradient problem? How to identify it? How is it solved?
-1. [The Vanishing/Exploding Gradient Problem in Deep Neural Networks | by Kurtis Pykes | Towards Data Science](https://towardsdatascience.com/the-vanishing-exploding-gradient-problem-in-deep-neural-networks-191358470c11)
-1. [The Vanishing Gradient Problem. The Problem, Its Causes, Its… | by Chi-Feng Wang | Towards Data Science](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
+1. [The Vanishing/Exploding Gradient Problem in Deep Neural Networks \| by Kurtis Pykes \| Towards Data Science](https://towardsdatascience.com/the-vanishing-exploding-gradient-problem-in-deep-neural-networks-191358470c11)
+1. [The Vanishing Gradient Problem. The Problem, Its Causes, Its… \| by Chi-Feng Wang \| Towards Data Science](https://towardsdatascience.com/the-vanishing-gradient-problem-69bf08b15484)
 
 In a network of n hidden layers, n derivatives will be multiplied together. If the derivatives are large then the gradient will increase exponentially as we propagate down the model until they eventually explode, and this is what we call the problem of exploding gradient. Alternatively, if the derivatives are small then the gradient will decrease exponentially as we propagate through the model until it eventually vanishes, and this is the vanishing gradient problem.
 
@@ -470,7 +458,7 @@ In a network of n hidden layers, n derivatives will be multiplied together. If t
 1. Use LSTM Networks
 
 ## What is Gradient Clipping?
-1. [Introduction to Gradient Clipping Techniques with Tensorflow | cnvrg.io](https://cnvrg.io/gradient-clipping/#:~:text=%20Gradient%20clipping%20can%20be%20applied%20in%20two,by%20value%202%20Clipping%20by%20norm%20More%20)
+1. [Introduction to Gradient Clipping Techniques with Tensorflow \| cnvrg.io](https://cnvrg.io/gradient-clipping/#:~:text=%20Gradient%20clipping%20can%20be%20applied%20in%20two,by%20value%202%20Clipping%20by%20norm%20More%20)
 1. [Understanding Gradient Clipping (and How It Can Fix Exploding Gradients Problem) - neptune.ai](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)
 
 Gradient clipping involves forcing the gradients to a certain number when they go above or below a defined threshold. 
@@ -484,6 +472,7 @@ Gradient clipping can be applied in two common ways:
     if ‖g‖ ≥ max_threshold or ‖g‖ ≤ min_threshold then
         g ← threshold (accordingly)
     end if
+
 where max\_threshold and min\_threshold are the boundary values and between them lies a range of values that gradients can take. g, here is the gradient, and  ‖g ‖ is the norm of g. 
 
 **Clipping by norm**: We clip the gradients by multiplying the unit vector of the gradients with the threshold. 
@@ -493,35 +482,36 @@ The algorithm is as follows:
     if ‖g‖ ≥ threshold then
         g ← threshold * g/‖g‖
     end if
+
 where the threshold is a hyperparameter, g is the gradient, and  ‖g ‖ is the norm of g. Since g/‖ g‖ is a unit vector, after rescaling the new g will have norm equal to threshold. Note that if  ‖g‖ < c, then we don’t need to do anything,
 
 Gradient clipping ensures the gradient vector g has norm at most equal to threshold. 
 
 ## Compare Activation Functions
-1. [Activation Functions: Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax | by Mukesh Chaudhary | Medium](https://medium.com/@cmukesh8688/activation-functions-sigmoid-tanh-relu-leaky-relu-softmax-50d3778dcea5)
+1. [Activation Functions: Sigmoid, Tanh, ReLU, Leaky ReLU, Softmax \| by Mukesh Chaudhary \| Medium](https://medium.com/@cmukesh8688/activation-functions-sigmoid-tanh-relu-leaky-relu-softmax-50d3778dcea5)
 
 ## Compare Loss Functions
-1. [Loss Function | Loss Function In Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)![Not Found](images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.030.png)
+1. [Loss Function \| Loss Function In Machine Learning (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2019/08/detailed-guide-7-loss-functions-machine-learning-python-code/)![Not Found](/images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.030.png)
 
 ## Compare Optimizers
-[Line to coursera](https://www.coursera.org/learn/deep-neural-network/lecture/qcogH/mini-batch-gradient-descent)
+[Link to coursera](https://www.coursera.org/learn/deep-neural-network/lecture/qcogH/mini-batch-gradient-descent)
 
 1. Gradient Descent
-1. Stochastic Gradient Descent - Same as Gradient descent, but for each sample
-1. Mini Batch Gradient Descent - Same as Gradient descent, but for each mini batch
-1. Gradient Descent with Momentum - Each update is not made with the current value of gradient, but with the exponential moving average of the gradients:                                   
 
+2. Stochastic Gradient Descent - Same as Gradient descent, but for each sample
+
+3. Mini Batch Gradient Descent - Same as Gradient descent, but for each mini batch
+
+4. Gradient Descent with Momentum - Each update is not made with the current value of gradient, but with the exponential moving average of the gradients:                                   
 ![](/images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.031.png)
-
 ![](/images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.032.png)
 
-5. Root Mean Square Propagation (RMSProp):
-
+5. Root Mean Square Propagation (RMSProp):\
 ![](/images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.033.png)
 
-6. Adaptive Moment Estimate (Adam)
-
+6. Adaptive Moment Estimate (Adam)\
 ![](/images/ds-interview/Aspose.Words.b499c499-1cb7-4a67-bd0b-7d4698e5c020.034.png)
+
 
 ## How to reduce overfitting
 
@@ -531,49 +521,41 @@ Gradient clipping ensures the gradient vector g has norm at most equal to thresh
 4. Early Stopping
 
 ## CNN
-[(302) C4W1L01 Computer Vision - YouTube](https://www.youtube.com/watch?v=ArPaAX_PhIs&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=1)
+- [(302) C4W1L01 Computer Vision - YouTube](https://www.youtube.com/watch?v=ArPaAX_PhIs&list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF&index=1)
 
 ## Word2Vec
-[Word2Vec For Word Embeddings -A Beginner's Guide - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/07/word2vec-for-word-embeddings-a-beginners-guide/)
+- [Word2Vec For Word Embeddings -A Beginner's Guide - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2021/07/word2vec-for-word-embeddings-a-beginners-guide/)
 
 ## GloVec
-[glove.pdf (stanford.edu)](https://nlp.stanford.edu/pubs/glove.pdf)
+- [glove.pdf (stanford.edu)](https://nlp.stanford.edu/pubs/glove.pdf)
 
 ## Positional Embeddings
 
-<https://www.youtube.com/watch?v=eEGDEJfP74k>
-
-[https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9 429b5c40a139/tensor2tensor/layers/common_attention.py](https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py)
-
-[https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transforme r/transformer_positional_encoding_graph.ipynb](https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb)
+- <https://www.youtube.com/watch?v=eEGDEJfP74k>
+- [https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9 429b5c40a139/tensor2tensor/layers/common_attention.py](https://github.com/tensorflow/tensor2tensor/blob/23bd23b9830059fbc349381b70d9429b5c40a139/tensor2tensor/layers/common_attention.py)
+- [https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transforme r/transformer_positional_encoding_graph.ipynb](https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb)
 
 ## Transformers
-[The Illustrated Transformer – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](https://jalammar.github.io/illustrated-transformer/)
-
-<https://www.youtube.com/watch?v=QUk6jvB9RGk>
+- [The Illustrated Transformer – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](https://jalammar.github.io/illustrated-transformer/)
+- <https://www.youtube.com/watch?v=QUk6jvB9RGk>
 
 ## BERT(Bidirectional Encoder Representations from Transformers)
-[The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning) – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/illustrated-bert/)
-
-[A Visual Guide to Using BERT for the First Time – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
+- [The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning) – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/illustrated-bert/)
+- [A Visual Guide to Using BERT for the First Time – Jay Alammar – Visualizing machine learning one concept at a time. (jalammar.github.io)](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/)
 
 ## Deep Q Network
-[Human-level control through deep reinforcement learning (storage.googleapis.com) ](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+- [Human-level control through deep reinforcement learning (storage.googleapis.com) ](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+- [deep_q_network_breakout - Colaboratory (google.com)](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/rl/ipynb/deep_q_network_breakout.ipynb#scrollTo=2gc-Xf33zqNW)
+- [Deep Q-Learning for Atari Breakout (keras.io)](https://keras.io/examples/rl/deep_q_network_breakout/#train)
+- [My Journey Into Deep Q-Learning with Keras and Gym \| by Gaetan Juvin \| Medium](https://medium.com/@gtnjuvin/my-journey-into-deep-q-learning-with-keras-and-gym-3e779cc12762)
+- [Q Learning Explained \| Reinforcement Learning Using Python \| Q Learning in AI \| Edureka - YouTube](https://www.youtube.com/watch?v=DhdUlDIAG7Y)
 
-[deep_q_network_breakout - Colaboratory (google.com)](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/rl/ipynb/deep_q_network_breakout.ipynb#scrollTo=2gc-Xf33zqNW)
-
-[Deep Q-Learning for Atari Breakout (keras.io)](https://keras.io/examples/rl/deep_q_network_breakout/#train)
-
-[My Journey Into Deep Q-Learning with Keras and Gym | by Gaetan Juvin | Medium](https://medium.com/@gtnjuvin/my-journey-into-deep-q-learning-with-keras-and-gym-3e779cc12762)
-
-[Q Learning Explained | Reinforcement Learning Using Python | Q Learning in AI | Edureka - YouTube](https://www.youtube.com/watch?v=DhdUlDIAG7Y)
 ## What are the different types of sampling techniques?
-
 1. Random Sampling
 1. Systematic Sampling
 1. Stratified Sampling vs Cluster Sampling 
-   1. [Difference Between Stratified Sampling and Cluster Sampling | Compare the Difference Between Similar Terms](https://www.differencebetween.com/difference-between-stratified-and-vs-cluster-sampling/#:~:text=%20Difference%20Between%20Stratified%20Sampling%20and%20Cluster%20Sampling,include%20homogenous%20members%20while%2C%20in%20cluster...%20More%20)
-   1. [Cluster Sampling: Definition, Method and Examples | QuestionPro](https://www.questionpro.com/blog/cluster-sampling/)
+   1. [Difference Between Stratified Sampling and Cluster Sampling \| Compare the Difference Between Similar Terms](https://www.differencebetween.com/difference-between-stratified-and-vs-cluster-sampling/#:~:text=%20Difference%20Between%20Stratified%20Sampling%20and%20Cluster%20Sampling,include%20homogenous%20members%20while%2C%20in%20cluster...%20More%20)
+   1. [Cluster Sampling: Definition, Method and Examples \| QuestionPro](https://www.questionpro.com/blog/cluster-sampling/)
 1. Judgemental or Purposive Sampling
     1. [Purposive Sampling: Definition, Types, Examples (formpl.us)](https://www.formpl.us/blog/purposive-sampling)
 
@@ -588,10 +570,10 @@ Systematic sampling is a type of probability [sampling method](https://www.inves
 - Disadvantages include over- or under-representation of particular patterns and a greater risk of data manipulation.
 
 ## Entropy & Information Gain
-[Information Gain and Entropy Explained | Data Science - Humaneer](https://www.humaneer.org/blog/data-science-information-gain-and-entropy-explained/)
+- [Information Gain and Entropy Explained \| Data Science - Humaneer](https://www.humaneer.org/blog/data-science-information-gain-and-entropy-explained/)
 
 ## Hypothesis Testing 
-[Statistics - Hypothesis Testing (w3schools.com)](https://www.w3schools.com/statistics/statistics_hypothesis_testing.php)
+- [Statistics - Hypothesis Testing (w3schools.com)](https://www.w3schools.com/statistics/statistics_hypothesis_testing.php)
 
 A statistical hypothesis is an assumption about a population which may or may not be true. Hypothesis testing is a set of formal procedures used by statisticians to either accept or reject statistical hypotheses. Statistical hypotheses are of two types:
 
@@ -609,34 +591,28 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
 - Statistical analysts test a hypothesis by measuring and examining a random sample of the population being analyzed.
 
 ## What is p-value?
-[Understanding P-values | Definition and Examples (scribbr.com) ](https://www.scribbr.com/statistics/p-value/)[P-Value Definition (investopedia.com)](https://www.investopedia.com/terms/p/p-value.asp)
+- [Understanding P-values \| Definition and Examples (scribbr.com) ](https://www.scribbr.com/statistics/p-value/)
+- [P-Value Definition (investopedia.com)](https://www.investopedia.com/terms/p/p-value.asp)
 
 ## Type I & Type II Error
+**Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R\|H<sub>0</sub> is true) . 
 
-**Type I error**, also known as a **“false positive”:** the error of rejecting a null hypothesis when it is actually true. In other words, this is the error of accepting an alternative hypothesis (the real hypothesis of interest) when the results can be attributed to chance. Plainly speaking, it occurs when we are observing a difference when in truth there is none (or more specifically - no statistically significant difference). So the probability of making a type I error in a test with rejection region R is 0 P(R|H<sub>0</sub> is true) . 
-
-**Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R|H<sub>a</sub> is true). The power of the test can be P (R|H<sub>a</sub> is true).
+**Type II error**, also known as a **"false negative":** the error of not rejecting a null hypothesis when the alternative hypothesis is the true state of nature. In other words, this is the error of failing to accept an alternative hypothesis when you don't have adequate power. Plainly speaking, it occurs when we are failing to observe a difference when in truth there is one. So the probability of making a type II error in a test with rejection region R is 1 - P (R\|H<sub>a</sub> is true). The power of the test can be P (R\|H<sub>a</sub> is true).
 
 ## Normal distribution: 
-[Statistics - Standard Normal Distribution (w3schools.com)](https://www.w3schools.com/statistics/statistics_standard_normal_distribution.php)
+- [Statistics - Standard Normal Distribution (w3schools.com)](https://www.w3schools.com/statistics/statistics_standard_normal_distribution.php)
+- [Normal Distribution \| Examples, Formulas, & Uses (scribbr.com)](https://www.scribbr.com/statistics/normal-distribution/)
+- [Normal Distribution \| What is Normal Distribution : An Ultimate Guide (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/05/normal-distribution-an-ultimate-guide/)
 
-[Normal Distribution | Examples, Formulas, & Uses (scribbr.com)](https://www.scribbr.com/statistics/normal-distribution/)
-
-[Normal Distribution | What is Normal Distribution : An Ultimate Guide (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/05/normal-distribution-an-ultimate-guide/)
-## Exploratory Data Analysis 
-
+# Exploratory Data Analysis 
 ## Explain Boxplots
-[Understanding Boxplots. The image above is a boxplot. A boxplot… | by Michael Galarnyk | Towards Data Science](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
-
-[Explaining the 68-95-99.7 rule for a Normal Distribution | by Michael Galarnyk | Towards Data Science](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
+- [Understanding Boxplots. The image above is a boxplot. A boxplot… \| by Michael Galarnyk \| Towards Data Science](https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51)
+- [Explaining the 68-95-99.7 rule for a Normal Distribution \| by Michael Galarnyk \| Towards Data Science](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
 
 ## Explain QQ plots
-
-[Q-Q plot - Ensure Your ML Model is Based on the Right Distribution (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/09/q-q-plot-ensure-your-ml-model-is-based-on-the-right-distributions/)
-
-[Q-Q Plots Explained. Explore the powers of Q-Q plots. | by Paras Varshney | Towards Data Science](https://towardsdatascience.com/q-q-plots-explained-5aa8495426c0)
-
-[Q–Q plot - Wikipedia](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot)
+- [Q-Q plot - Ensure Your ML Model is Based on the Right Distribution (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2021/09/q-q-plot-ensure-your-ml-model-is-based-on-the-right-distributions/)
+- [Q-Q Plots Explained. Explore the powers of Q-Q plots. \| by Paras Varshney \| Towards Data Science](https://towardsdatascience.com/q-q-plots-explained-5aa8495426c0)
+- [Q–Q plot - Wikipedia](https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot)
 
 ## Techniques for Missing value imputation
 1. Descriptive statistics like mean, median, mode, or constant value
@@ -678,7 +654,7 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
 1. Try a new transformation
 
 ## Encoding Categorical Variables
-1. **One hot encoding**:  how to do it for large vectors? [How to Handle Categorical Features | by Ashutosh Sahu | Analytics Vidhya | Medium](https://medium.com/analytics-vidhya/how-to-handle-categorical-features-ab65c3cf498e)
+1. **One hot encoding**:  how to do it for large vectors? [How to Handle Categorical Features \| by Ashutosh Sahu \| Analytics Vidhya \| Medium](https://medium.com/analytics-vidhya/how-to-handle-categorical-features-ab65c3cf498e)
 1. **One hot encoding with Multiple Categories**: In this technique, instead of creating the new column for every category, they limit creating the new column for 10 most frequent categories.
 1. **Ordinal Number Encoding:** In this technique, each unique category value is given an integer value. For instance, “red” equals 1, “green” equals 2 and “blue” equals 3.
 1. **Count or Frequency Encoding:** In this technique we will substitute the categories by the count of the observations that show that category in the dataset
@@ -693,14 +669,12 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
    1. Calculate the probability ratio i.e. P(True or 1) / P(False or 0).
    1. Replace the category with a probability ratio.
 1. **Weight of Evidence** Explained later
-
 1. **Label Encoding**
 
 ## Weight of Evidence & Information Value 
-[Weight of Evidence (WOE) and Information Value (IV) Explained (listendata.com)](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html#:~:text=The%20WOE%20should%20be%20monotonic%2C%20i.e.%20either%20growing,smoothing%20-%20the%20fewer%20bins%2C%20the%20more%20smoothing.)
+- [Weight of Evidence (WOE) and Information Value (IV) Explained (listendata.com)](https://www.listendata.com/2015/03/weight-of-evidence-woe-and-information.html#:~:text=The%20WOE%20should%20be%20monotonic%2C%20i.e.%20either%20growing,smoothing%20-%20the%20fewer%20bins%2C%20the%20more%20smoothing.)
 
 ## Multivariate analysis
-
 1. Add additional variables to the chart using hue
 1. Add additional variables to the chart using columns
 1. Using FacetGrid
@@ -713,34 +687,29 @@ Hypothesis testing is used to assess the plausibility of a hypothesis by using s
 - Check for duplicates
 
 ## Common Analytics Functions 
+***First_value, last_value, nth_value, lead, lag, rank, dense_rank, cume_dist, percent_value***
 
-First_value, last_value, nth_value, lead, lag, rank, dense_rank, cume_dist, percent_value
+- [Spark Window Functions with Examples - Spark by {Examples} (sparkbyexamples.com)](https://sparkbyexamples.com/spark/spark-sql-window-functions/)
+- [Top 5 SQL Analytic Functions Every Data Analyst Needs to Know \| by Dario Radečić \| Towards Data Science](https://towardsdatascience.com/top-5-sql-analytic-functions-every-data-analyst-needs-to-know-3f32788e4ebb)
+- [SQL Functions \| SQL Functions For Data Analysis (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2020/07/sql-functions-for-data-analysis-tasks/)
+- [Built-in Functions - Spark 3.2.1 Documentation (apache.org)](https://spark.apache.org/docs/latest/sql-ref-functions-builtin.html#aggregate-functions)
 
-[Spark Window Functions with Examples - Spark by {Examples} (sparkbyexamples.com)](https://sparkbyexamples.com/spark/spark-sql-window-functions/)
-
-[Top 5 SQL Analytic Functions Every Data Analyst Needs to Know | by Dario Radečić | Towards Data Science](https://towardsdatascience.com/top-5-sql-analytic-functions-every-data-analyst-needs-to-know-3f32788e4ebb)
-
-[SQL Functions | SQL Functions For Data Analysis (analyticsvidhya.com)](https://www.analyticsvidhya.com/blog/2020/07/sql-functions-for-data-analysis-tasks/)
-
-[Built-in Functions - Spark 3.2.1 Documentation (apache.org)](https://spark.apache.org/docs/latest/sql-ref-functions-builtin.html#aggregate-functions)
-
-## Explaing Cut and quantile function in python
-## Which algorithms are sensitive to feature scaling and normalization/outliers/categorical variable/missing values
-## What is Variable Clustering?
-## How to analyse datasets with very large number of features?
-## How to plot two categorical variables
-## How to scatter plot b/w all variables
-## What is heatmap?
-## How to create correlation plot in python?
-## How to do missing value imputation for time series data?
+### Explaing Cut and quantile function in python
+### Which algorithms are sensitive to feature scaling and normalization/outliers/categorical variable/missing values
+### What is Variable Clustering?
+### How to analyse datasets with very large number of features?
+### How to plot two categorical variables
+### How to scatter plot b/w all variables
+### What is heatmap?
+### How to create correlation plot in python?
+### How to do missing value imputation for time series data?
 
 ## Time Series Forecasting
+- [11 Classical Time Series Forecasting Methods in Python (Cheat Sheet) (machinelearningmastery.com)](https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/#:~:text=11%20Classical%20Time%20Series%20Forecasting%20Methods%20in%20Python,process%20at%20prior%20time%20...%20More%20items...%20)
 
-[11 Classical Time Series Forecasting Methods in Python (Cheat Sheet) (machinelearningmastery.com)](https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/#:~:text=11%20Classical%20Time%20Series%20Forecasting%20Methods%20in%20Python,process%20at%20prior%20time%20...%20More%20items...%20)
 ## Case Study
-[Item2Vec with Metadata: incorporating side-information in item embeddings | by Alapatimanoharsai | Swiggy Bytes](https://bytes.swiggy.com/item2vec-with-metadata-incorporating-side-information-in-item-embeddings-167fb8d3f404)
+[Item2Vec with Metadata: incorporating side-information in item embeddings \| by Alapatimanoharsai \| Swiggy Bytes](https://bytes.swiggy.com/item2vec-with-metadata-incorporating-side-information-in-item-embeddings-167fb8d3f404)
+
 # Dynamic Programming
-
-[Dynamic Programming | Introduction - YouTube](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=1)
-
-[Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges - YouTube](https://www.youtube.com/watch?v=oBt53YbR9Kk)
+- [Dynamic Programming \| Introduction - YouTube](https://www.youtube.com/watch?v=nqowUJzG-iM&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=1)
+- [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges - YouTube](https://www.youtube.com/watch?v=oBt53YbR9Kk)
