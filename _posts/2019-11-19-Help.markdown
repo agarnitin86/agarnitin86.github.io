@@ -22,6 +22,10 @@ categories: python, sklearn, gpu
 12. Some useful steps to setup server for Deep Learning
 13. Shell command to check folder wise disk usage
 14. Filezilla: Error: Disconnected: No supported authentication methods available (server sent: publickey)
+15. How to add equations to you Readme file in github?
+16. Important links for Jekyll
+17. How to create personal access token for git?
+18. How to attach virtual environment to jupyter notebook?
 
 ---
 
@@ -208,6 +212,72 @@ Take your latex equation and go to http://www.codecogs.com/latex/eqneditor.php, 
 
 ---
 
+**Important links for jekyll**
+
+**Solution**
+- [Install jekyll on windows](https://jekyllrb.com/docs/installation/windows/)
+- [Link to jekyll themes](https://rubygems.org/)
+- [Ruby installers](https://rubyinstaller.org/downloads/)
+- [How to apply new theme to your jekyll website](https://www.youtube.com/watch?v=NoRS2D-cyko&list=PLLAZ4kZ9dFpOPV5C5Ay0pHaa0RJFhcmcB&index=11)
+    - **Set the name of the theme in _config.yml**
+        ```
+        theme: jekyll-theme-cayman
+        plugins:
+           - jekyll-feed
+        ``` 
+    - **Set the name of the theme in Gemfile**
+        ```
+        gem "jekyll-theme-cayman"
+        ``` 
+- [How to iterate over posts in _posts directory of your website](https://www.youtube.com/watch?v=6N1X5XffuUA&list=PLLAZ4kZ9dFpOPV5C5Ay0pHaa0RJFhcmcB&index=15)
+
+---
+
+**How to create personal access token for git**
+- [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+---
+
+**How to attach virtual environment to jupyter notebook?**
+
+**Following commands have been tested on Windows 10. 
+Open Anaconda prompt and run the following commands**
+
+***Update conda***
+```
+$ conda update -n base -c defaults conda
+```
+***Switch to your virtual environment using***
+```
+$ conda activate venv
+```
+***Install jupyter, ipykernel and attach***
+```
+$ pip install jupyter
+$ pip install ipykernel
+$ python -m ipykernel install --user --name=venv
+Installed kernelspec venv in C:\Users\<<username>>\AppData\Roaming\jupyter\kernels\venv
+```
+In this folder you can find Kernel.json
+```
+{
+ "argv": [
+  "C:\\Users\\<<username>>\\anaconda3\\envs\\venv\\python.exe",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "venv",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
+```
+Now, you should be able to see this environment venv in your jupyter list of kernels
+
+---
 
 <div id="disqus_thread"></div>
 <script>
