@@ -26,6 +26,7 @@ categories: python, sklearn, gpu
 16. Important links for Jekyll
 17. How to create personal access token for git?
 18. How to attach virtual environment to jupyter notebook?
+19. VS Code Anaconda Environment - import _ssl DLL load fail error
 
 ---
 
@@ -276,6 +277,23 @@ In this folder you can find Kernel.json
 }
 ```
 Now, you should be able to see this environment venv in your jupyter list of kernels
+
+---
+
+**[VS Code Anaconda environment - import _ssl DLL load fail error](https://stackoverflow.com/questions/54175042/python-3-7-anaconda-environment-import-ssl-dll-load-fail-error)**
+
+There are couple of solutions mentioned on stackoverflow [here](https://stackoverflow.com/questions/55878362/import-ssl-error-dll-load-failed-python-37-anaconda-windows-10) and in the above link. What worked for me : 
+
+**Open Anaconda Prompt**
+
+**Activate your virtual environment**
+```
+conda activate <<your virtual environment>>
+```
+**Run vscode from this prompt**
+```
+(venv) C:\Users\nitagarwal> code
+```
 
 ---
 
