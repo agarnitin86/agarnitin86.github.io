@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "BERT - Handson Notebooks"
+title:  "BERT - Hands-on Notebooks for extracting embeddings, fine tuning"
 date:   2019-12-17 17:49:34
 category: BERT
 categories: NLP, BERT, Fine Tuning
