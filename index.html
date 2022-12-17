@@ -6,7 +6,12 @@ layout: default
 
   <h1 class="page-heading">Posts</h1>
   <ul class="post-list">
-    {% for post in site.posts %}
+    <li>
+      <h4>
+        <a class="post-link" href="https://medium.com/data-science-at-microsoft/search-and-ranking-for-information-retrieval-ir-5f9ca52dd056"><b>Learning to Rank</b>:Search and Ranking for Information Retrieval (IR)</a>
+      </h4>
+    </li>
+  {% for post in site.posts %}
       <li>
         <h4>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><b>{{post.category}}</b>:{{ post.title }}</a>
